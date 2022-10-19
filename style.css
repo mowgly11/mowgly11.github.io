@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
+
+:root {
+  --color-1: #7ec8e3;
+  --color-2: #0000ff;
+  --color-3: #000c66;
+  --color-4: #050a30;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Open Sans", sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+  transition: 0.3s ease;
+  position: absolute;
+  width: 100%;
+  border-bottom: 3px solid white;
+  border-radius: 0 0 25% 25%;
+}
+
+.left-side-nav {
+  display: flex;
+  align-items: center;
+  margin: 1em;
+}
+
+.left-side-nav h1 {
+  font-weight: 800;
+  font-size: 2.5em;
+  background: linear-gradient(to right bottom, white, #65dfed);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  cursor: pointer;
+}
+
+.primary-navigation {
+  margin-left: 1.5em;
+}
+
+.primary-navigation a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  margin: 0.7em;
+  padding: 5px 20px;
+  border-radius: 15px;
+  border: 3px solid white;
+  transition: 0.7s ease;
+}
+
+.primary-navigation a:hover {
+  background: linear-gradient(to right bottom, white, #65dfed);
+  color: rgb(99, 99, 99);
+}
+
+.second-navigation {
+  display: flex;
+}
+
+.right-side-nav a {
+  color: white;
+  font-size: 1.3em;
+  margin: 0.5em;
+  transition: 0.2s ease;
+}
+
+.right-side-nav a:hover {
+  color: rgb(99, 99, 99);
+  transform: scale(1.5);
+}
+
+.main-site-section {
+  height: 100vh;
+  background: url(./imgs/background.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.main-section-title {
+  color: white;
+  font-size: 5em;
+  font-weight: 900;
+  -webkit-text-stroke: 2px black;
+}
+
+.main-site-section a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.3em;
+  padding: 15px 35px;
+  border-radius: 10px;
+  transition: 0.7s;
+  border-right: 3px white solid;
+  border-bottom: 3px white solid;
+  font-weight: 900;
+}
+
+.main-site-section a:hover {
+  background-color: white;
+  color: rgb(99, 99, 99);
+  border-right: 3px solid rgb(99, 99, 99);
+  border-bottom: 3px solid rgb(99, 99, 99);
+}
