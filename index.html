@@ -1,40 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style.css" />
-    <script src="./script.js"></script>
-    <script
-      src="https://kit.fontawesome.com/f334197832.js"
-      crossorigin="anonymous"
-    ></script>
-    <title>Osama</title>
-  </head>
-  <body>
-    <header>
-      <div class="left-side-nav">
-        <h1>OSAMA</h1>
-        <nav class="primary-navigation">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Osama - Portfolio</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="icon" type="image/png" href="./imgs/js.png">
+  <script src="./script.js" defer></script>
+  <script src="https://kit.fontawesome.com/f334197832.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="phone-navbar">
+    <a href="#">Home</a>
+    <a href="#" onclick="openSite('www.fiverr.com/oussamabouza164')">Fiverr</a>
+    <a href="#">Projects</a>
+  </div>
+  <section class="site-page">
+    <div class="navigation">
+      <div class="title">
+        <h1>Osama</h1>
+      </div>
+      <div class="navbar">
+        <nav>
           <a href="#">Home</a>
-          <a href="#">Projects</a>
-          <a href="#">Contact</a>
-          <a href="#">About Me</a>
+          <a href="#" onclick="openSite('www.fiverr.com/oussamabouza164')">Fiverr</a>
+          <a href="#" onclick="openSite('github.com/mowgly11')">Projects</a>
         </nav>
       </div>
-      <div class="right-side-nav">
-        <nav class="second-navigation">
-          <a href="#"><i class="fa-brands fa-github"></i></a>
-          <a href="#"><i class="fa-brands fa-discord"></i></a>
-          <a href="#"><i class="fa-brands fa-facebook"></i></a>
-          <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-        </nav>
+    </div>
+    <div class="content">
+      <h1>Hello! i'm Osama<br><br><span>Welcome To My Website.</span></h1>
+      <a id="aboutme" href="#aboutme-section">About me</a>
+      <div class="social">
+        <a href="#github" onclick="openSite('github.com/mowgly11')"><i class="fa-brands fa-github"></i></a>
+        <a href="#youtube" onclick="openSite('www.youtube.com/channel/UCju5WMfD3idzucjvs6RwlyA')"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#gmail" onclick="alert('oussamabouzalim4@gmail.com')"><i class="fa-solid fa-envelope"></i></a>
       </div>
-    </header>
-    <section class="main-site-section">
-        <h1 class="main-section-title">Web Developer.</h1>
-        <a href="#">View More</a>
-    </section>
-  </body>
+    </div>
+  </section>
+  <section class="aboutme-section" id="aboutme-section">
+    <h1>About me</h1>
+    <div class="card">
+      <p>My name is osama. i'm a 18 years old, junior web developer with mostly 2 years of experience.<br><br>I like anything that is related with Technology, i'm really interested in learning Artificial Intelligence and ML.<br><br>Currently i'm a Freelancer at multiple websites like <a style="color: rgb(0, 255, 0); text-decoration: none;" href="#fiverr" onclick="openSite('www.fiverr.com/oussamabouza164')">Fiverr</a> and <a style="color: rgb(189, 67, 67); text-decoration: none;" href="#khamsat" onclick="openSite('khamsat.com/user/simhmed')">Khamsat</a>, i make websites like the one you see now. you can hire me as a frontend developer for cheap prices since i still need experience. you can contact me via email or via <span style="color: #6c5ad1;">discord</span>: <span style="text-decoration: underline;">SXY#3780</span><br><br>i'm really glad because you visited my world, i hope you like it :)</p>
+    </div>
+  </section>
+</body>
+
 </html>

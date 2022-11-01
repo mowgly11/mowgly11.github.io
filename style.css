@@ -1,116 +1,234 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Trispace:wght@100;200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 :root {
-  --color-1: #7ec8e3;
-  --color-2: #0000ff;
-  --color-3: #000c66;
-  --color-4: #050a30;
+    --color-1: #cb68a9;
+    --color-2: #170376;
+    --color-3: #e6975e;
+    --color-4: white;
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-  font-family: "Open Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: "Trispace", sans-serif;
 }
 
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1em;
-  transition: 0.3s ease;
-  position: absolute;
-  width: 100%;
-  border-bottom: 3px solid white;
-  border-radius: 0 0 25% 25%;
+.site-page {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: space;
 }
 
-.left-side-nav {
-  display: flex;
-  align-items: center;
-  margin: 1em;
+.navigation {
+    width: 30vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3em;
+    background: linear-gradient(to left, var(--color-2), var(--color-1));
+    text-align: center;
+    border-right: 3px var(--color-3) solid;
+    position: fixed;
+    z-index: 99;
 }
 
-.left-side-nav h1 {
-  font-weight: 800;
-  font-size: 2.5em;
-  background: linear-gradient(to right bottom, white, #65dfed);
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-  cursor: pointer;
+.title {
+    height: 30vh;
+    display: flex;
+    align-items: center;
 }
 
-.primary-navigation {
-  margin-left: 1.5em;
+.title h1 {
+    font-weight: 800;
+    font-size: 3em;
+    color: var(--color-3);
+    transition: 0.5s;
+    cursor: pointer;
 }
 
-.primary-navigation a {
-  text-decoration: none;
-  color: white;
-  font-weight: 600;
-  margin: 0.7em;
-  padding: 5px 20px;
-  border-radius: 15px;
-  border: 3px solid white;
-  transition: 0.7s ease;
+.title h1:hover {
+    transform: translateX(20px);
 }
 
-.primary-navigation a:hover {
-  background: linear-gradient(to right bottom, white, #65dfed);
-  color: rgb(99, 99, 99);
+.navbar a {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5em;
+    color: var(--color-3);
+    text-decoration: none;
+    background: linear-gradient(to left, var(--color-2), var(--color-1));
+    padding: 10px 20px;
+    font-weight: 600;
+    border-radius: 16px;
+    border: 3px var(--color-3) solid;
+    transition: 0.3s;
 }
 
-.second-navigation {
-  display: flex;
+.navbar a:hover {
+    color: white;
+    border: white 3px solid;
 }
 
-.right-side-nav a {
-  color: white;
-  font-size: 1.3em;
-  margin: 0.5em;
-  transition: 0.2s ease;
+.content {
+    width: 70%;
+    height: 100vh;
+    position: absolute;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    background: url(./imgs/bg.jpg);
+    background-attachment: fixed;
+    background-size: cover;
 }
 
-.right-side-nav a:hover {
-  color: rgb(99, 99, 99);
-  transform: scale(1.5);
+.phone-navbar {
+    display: none;
 }
 
-.main-site-section {
-  height: 100vh;
-  background: url(./imgs/background.jpg);
-  background-size: cover;
-  background-attachment: fixed;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+.content h1 {
+    color: var(--color-3);
 }
 
-.main-section-title {
-  color: white;
-  font-size: 5em;
-  font-weight: 900;
-  -webkit-text-stroke: 2px black;
+.social {
+    margin-top: 1em;
+    display: flex;
 }
 
-.main-site-section a {
-  color: white;
-  text-decoration: none;
-  font-size: 1.3em;
-  padding: 15px 35px;
-  border-radius: 10px;
-  transition: 0.7s;
-  border-right: 3px white solid;
-  border-bottom: 3px white solid;
-  font-weight: 900;
+.social a{
+    color: var(--color-3);
+    font-size: 1.3em;
+    margin: 8px;
+    transition: 0.5s;
 }
 
-.main-site-section a:hover {
-  background-color: white;
-  color: rgb(99, 99, 99);
-  border-right: 3px solid rgb(99, 99, 99);
-  border-bottom: 3px solid rgb(99, 99, 99);
+.social a:hover {
+    transform: scale(1.4);
+    color: white;
+}
+
+.content h1 span {
+    background: linear-gradient(to bottom, var(--color-1), var(--color-3));
+    font-family: "Press Start 2P", cursive;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.5em;
+    font-weight: 800;
+    transition: 0.5s;
+}
+
+.content h1 span:hover {
+    background: white;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+.content #aboutme {
+    margin-top: 2em;
+    color: var(--color-3);
+    text-decoration: none;
+    background: linear-gradient(to left, var(--color-2), var(--color-1));
+    padding: 10px 20px;
+    font-weight: 600;
+    border-radius: 16px;
+    border: 3px var(--color-3) solid;
+    transition: 0.3s;
+}
+
+.content #aboutme:hover {
+    color: white;
+    border: white 3px solid;
+}
+
+.aboutme-section {
+    width: 70%;
+    background: var(--color-2);
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    position: absolute;
+    justify-content: center;
+    right: 0;
+    border-top: 3px var(--color-3) solid;
+}
+
+.aboutme-section h1 {
+    color: var(--color-3);
+    font-size: 2.5em;
+    padding: 1em;
+}
+
+.aboutme-section p {
+    color: white;
+}
+
+.card {
+    padding: 0 5em;
+}
+
+@media screen and (max-width: 980px) {
+    .navigation {
+        display: none;
+    }
+
+    .content {
+        width: 100%;
+    }
+
+    .phone-navbar {
+        display: flex;
+        position: absolute;
+        border-bottom: 2px var(--color-3) solid;
+        width: 100%;
+        height: 10vh;
+        justify-content: space-around;
+        align-items: center;
+        z-index: 99;
+    }
+
+    .phone-navbar a {
+        display: flex;
+        align-items: center;
+        color: var(--color-3);
+        text-decoration: none;
+        flex-direction: row;
+        flex-wrap: wrap;
+        background: linear-gradient(to left, var(--color-2), var(--color-1));
+        padding: 5px 15px;
+        font-weight: 600;
+        font-size: 0.8em;
+        border-radius: 16px;
+        border: 3px var(--color-3) solid;
+        transition: 0.3s;
+    }
+
+    .phone-navbar a:hover {
+        color: white;
+        border: white 3px solid;
+    }
+
+    .aboutme-section {
+        width: 100%;
+        background: linear-gradient(to bottom, var(--color-2), var(--color-1));
+    }
+}
+
+@media screen and (max-width: 823px) {
+    .content h1 {
+        font-size: 1.2em;
+    }
 }
