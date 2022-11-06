@@ -8,21 +8,20 @@
     --color-4: white;
 }
 
+/* width */
 ::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f1f1; 
-}
- 
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #cb68a9, #170376); 
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #555; 
-}
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #cb68a9, #170376); 
+  }
 
 * {
     margin: 0;
@@ -238,7 +237,12 @@
     }
 
     .aboutme-section {
-        width: 100%;
+        position: relative;
+        width: 100vw;
+        padding: 0;
+        font-size: 14px;
+        height: 100vh;
+        min-width: 300px;
         background: linear-gradient(to bottom, var(--color-2), var(--color-1));
     }
 }
