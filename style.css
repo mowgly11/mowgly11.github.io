@@ -8,20 +8,17 @@
     --color-4: white;
 }
 
-/* width */
 ::-webkit-scrollbar {
     width: 10px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1; 
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: linear-gradient(to bottom, #cb68a9, #170376); 
-  }
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #cb68a9, #170376);
+}
 
 * {
     margin: 0;
@@ -36,20 +33,6 @@
     width: 100%;
     display: flex;
     justify-content: space;
-}
-
-.navigation {
-    width: 30vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 3em;
-    background: linear-gradient(to left, var(--color-2), var(--color-1));
-    text-align: center;
-    border-right: 3px var(--color-3) solid;
-    position: fixed;
-    z-index: 99;
 }
 
 .title {
@@ -70,27 +53,9 @@
     transform: translateX(20px);
 }
 
-.navbar a {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 5em;
-    color: var(--color-3);
-    text-decoration: none;
-    background: linear-gradient(to left, var(--color-2), var(--color-1));
-    padding: 10px 20px;
-    font-weight: 600;
-    border-radius: 16px;
-    border: 3px var(--color-3) solid;
-    transition: 0.3s;
-}
-
-.navbar a:hover {
-    color: white;
-    border: white 3px solid;
-}
 
 .content {
-    width: 70%;
+    width: 100%;
     height: 100vh;
     position: absolute;
     right: 0;
@@ -117,7 +82,7 @@
     display: flex;
 }
 
-.social a{
+.social a {
     color: var(--color-3);
     font-size: 1.3em;
     margin: 8px;
@@ -130,28 +95,24 @@
 }
 
 .content h1 span {
-    background: linear-gradient(to bottom, var(--color-1), var(--color-3));
-    font-family: "Press Start 2P", cursive;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    -moz-text-fill-color: transparent;
-    -webkit-text-fill-color: transparent;
-    font-size: 1.5em;
+    color: var(--color-3);
+    font-size: 1.7em;
     font-weight: 800;
     transition: 0.5s;
+    cursor: default;
 }
 
 .content h1 span:hover {
-    background: white;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    -moz-text-fill-color: transparent;
-    -webkit-text-fill-color: transparent;
+    color: white
 }
 
-.content #aboutme {
+.nav-links {
+    margin-top: 25px;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.content .nav-link {
     margin-top: 2em;
     color: var(--color-3);
     text-decoration: none;
@@ -163,19 +124,20 @@
     transition: 0.3s;
 }
 
-.content #aboutme:hover {
+.content .nav-link:hover {
     color: white;
     border: white 3px solid;
 }
 
 .aboutme-section {
-    width: 70%;
-    background: var(--color-2);
+    width: 100%;
+    background: linear-gradient(to bottom, var(--color-2), var(--color-1));
     height: 100%;
     display: flex;
     flex-direction: column;
     text-align: center;
     position: absolute;
+    padding: 0 10em;
     justify-content: center;
     right: 0;
     border-top: 3px var(--color-3) solid;
@@ -196,49 +158,13 @@
 }
 
 @media screen and (max-width: 980px) {
-    .navigation {
-        display: none;
-    }
-
     .content {
         width: 100%;
     }
 
-    .phone-navbar {
-        display: flex;
-        position: absolute;
-        border-bottom: 2px var(--color-3) solid;
-        width: 100%;
-        height: 10vh;
-        justify-content: space-around;
-        align-items: center;
-        z-index: 99;
-    }
-
-    .phone-navbar a {
-        display: flex;
-        align-items: center;
-        color: var(--color-3);
-        text-decoration: none;
-        flex-direction: row;
-        flex-wrap: wrap;
-        background: linear-gradient(to left, var(--color-2), var(--color-1));
-        padding: 5px 15px;
-        font-weight: 600;
-        font-size: 0.8em;
-        border-radius: 16px;
-        border: 3px var(--color-3) solid;
-        transition: 0.3s;
-    }
-
-    .phone-navbar a:hover {
-        color: white;
-        border: white 3px solid;
-    }
-
     .aboutme-section {
         position: relative;
-        width: 100vw;
+        width: 100%;
         padding: 0;
         font-size: 14px;
         height: 100vh;
