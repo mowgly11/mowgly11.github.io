@@ -7,32 +7,57 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Osama - Portfolio</title>
   <link rel="stylesheet" href="./style.css">
-  <link rel="icon" type="image/png" href="./imgs/js.png">
-  <script src="./script.js" defer></script>
   <script src="https://kit.fontawesome.com/f334197832.js" crossorigin="anonymous"></script>
+  <script src="./script.js" defer></script>
 </head>
 
 <body>
-  <section class="site-page">
-    <div class="content">
-      <h1>Hello! i'm Osama<br><br><span>Welcome To My Website.</span></h1>
-      <div class="nav-links">
-        <a id="aboutme" class="nav-link" href="#aboutme-section">About me</a>
-        <a id="projects" class="nav-link" href="#projects-section">Projects</a>
+  <header>
+    <div class="title-division">
+      <h1 id="header-title-1">Osama</h1>
+      <h1 id="header-title-2">Bozalim</h1>
+    </div>
+    <nav class="navigation">
+      <ul class="navigation-links" id="navigation-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Github</a></li>
+        <li><a href="#">Fiverr</a></li>
+      </ul>
+      <div id="bg" class="bg"></div>
+    </nav>
+    <a id="hamburger" href="#"><i class="fa-solid fa-bars-staggered"></i></a>
+  </header>
+  <div class="loading-screen">
+    <div id="loading-icon">
+      <i class="fa-solid fa-spinner"></i>
+    </div>
+  </div>
+  <main>
+    <section class="main-content">
+      <div id="big-text-h1">Hi! i'm Osama<br><span>Web Developer</span></div>
+      <a id="aboutmeBtn" href="#aboutme">View More</a>
+      <div class="email"><a href="mailto:oussamabouzalim4@gmail.com">Contact Me</a></div>
+    </section>
+    <section id="aboutme" class="aboutme-content">
+      <div class="introduction">
+        <div class="big-text-title">INTRODUCTION</div>
+        <div class="introduction-content">
+          <p>Welcome to my portfolio! My name is Osama and I am an 18-year-old <span style="color: orange;">Full Stack Developer</span> with a passion for creating innovative and user-friendly web applications. My skills include <span style="color: rgb(216, 45, 45)">HTML</span>, <span style="color: rgb(75, 75, 255);">CSS</span>, <span style="color: yellow;">JavaScript</span>, <span style="color: green;">NodeJS</span> and various frameworks and libraries. I have experience in both <span style="text-decoration: underline;">Front-End</span> and <span style="text-decoration: underline;">Back-End</span> development, which allows me to build dynamic and responsive websites that provide a seamless user experience.<br><br>
+
+            In addition to my technical skills, I also have experience working with <span style="color: rgb(72, 41, 184)">Adobe Photoshop</span>. I have been using this software for several years, and have developed a strong understanding of its features and capabilities. I am able to create visually appealing designs and graphics that enhance the overall look and feel of a website. I also have experience in photo editing, creating logos, and other graphics work.<br><br>
+            
+            I am always striving to improve my skills and stay current with the latest technologies in order to provide the best possible solutions for my clients. I am confident that my technical skills and graphic design experience make me a valuable asset for any project. I am a quick learner and a team player, I have a keen attention to detail, and I am able to meet tight deadlines. I am also able to communicate effectively with clients, team members and other stakeholders. Please take a look at my portfolio to see some of my work and if you have any questions, don't hesitate to reach out to me.</p>
+        </div>
+      </div>
+      <div class="projects">
+        <div class="big-text-title">PROJECTS</div>
       </div>
       <div class="social">
-        <a href="#github" onclick="openSite('github.com/mowgly11')"><i class="fa-brands fa-github"></i></a>
-        <a href="#youtube" onclick="openSite('www.youtube.com/channel/UCju5WMfD3idzucjvs6RwlyA')"><i class="fa-brands fa-youtube"></i></a>
-        <a href="#gmail" onclick="alert('oussamabouzalim4@gmail.com')"><i class="fa-solid fa-envelope"></i></a>
+        <div class="big-text-title">SOCIAL</div>
       </div>
-    </div>
-  </section>
-  <section class="aboutme-section" id="aboutme-section">
-    <h1>About me</h1>
-    <div class="card">
-      <p>My name is osama. i'm a 18 years old, junior web developer with mostly 2 years of experience.<br><br>I like anything that is related with Technology, i'm really interested in learning Artificial Intelligence and ML.<br><br>Currently i'm a Freelancer at multiple websites like <a style="color: rgb(189, 67, 67); text-decoration: none;" href="#khamsat" onclick="openSite('khamsat.com/user/simhmed')">Khamsat</a>, i make websites like the one you see now. you can hire me as a frontend developer for cheap prices since i still need experience. you can contact me via email or via <span style="color: #6c5ad1;">discord</span>: <span style="text-decoration: underline;">SXY#3780</span><br><br>i'm really glad because you visited my world, i hope you like it :)</p>
-    </div>
-  </section>
+    </section>
+  </main>
 </body>
 
 </html>

@@ -1,180 +1,314 @@
-@import url('https://fonts.googleapis.com/css2?family=Trispace:wght@100;200;300;400;500;600;700;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 :root {
-    --color-1: #cb68a9;
-    --color-2: #170376;
-    --color-3: #e6975e;
-    --color-4: white;
-}
-
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-    background: linear-gradient(to bottom, #cb68a9, #170376);
+    --black: #0E050F;
+    --light: #9388A2;
+    --purple: #341948;
+    --blue: #170B3B;
+    --pink: rgb(182, 0, 182);
+    --light-pink: rgb(218, 170, 255);
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
     scroll-behavior: smooth;
-    font-family: "Trispace", sans-serif;
 }
 
-.site-page {
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    justify-content: space;
-}
-
-.title {
-    height: 30vh;
-    display: flex;
-    align-items: center;
-}
-
-.title h1 {
-    font-weight: 800;
-    font-size: 3em;
-    color: var(--color-3);
-    transition: 0.5s;
-    cursor: pointer;
-}
-
-.title h1:hover {
-    transform: translateX(20px);
-}
-
-
-.content {
-    width: 100%;
-    height: 100vh;
-    position: absolute;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    background: url(./imgs/bg.jpg);
-    background-attachment: fixed;
+body {
+    background: url(./imgs/nubelson-fernandes--Xqckh_XVU4-unsplash.jpg) no-repeat;
     background-size: cover;
+    background-attachment: fixed;
 }
 
-.phone-navbar {
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--blue);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.8s ease;
+    z-index: 9999;
+}
+
+#loading-icon {
+    font-size: 100px;
+    color: var(--light);
+    animation: spin 1s infinite linear;
+    z-index: 9999;
+}
+
+.hide {
+    width: 0;
+}
+
+.hide #loading-icon {
     display: none;
 }
 
-.content h1 {
-    color: var(--color-3);
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
-.social {
-    margin-top: 1em;
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2em;
+    border-radius: 0 0 0 20%;
+    height: 10vh;
+    position: absolute;
+    width: 100%;
+}
+
+.title-division h1 {
+    font-weight: 900;
+    color: var(--light-pink);
+    text-decoration: none;
+}
+
+.title-division {
     display: flex;
 }
 
-.social a {
-    color: var(--color-3);
-    font-size: 1.3em;
-    margin: 8px;
+#header-title-2 {
     transition: 0.5s;
+    transform: translateY(-20px);
+    opacity: 0;
 }
 
-.social a:hover {
-    transform: scale(1.4);
-    color: white;
+#header-title-1:hover +
+#header-title-2  {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-.content h1 span {
-    color: var(--color-3);
-    font-size: 1.7em;
-    font-weight: 800;
-    transition: 0.5s;
-    cursor: default;
+.navigation-links {
+    display: flex;
+    list-style: none;
 }
 
-.content h1 span:hover {
-    color: white
-}
-
-.nav-links {
-    margin-top: 25px;
-    flex-wrap: wrap;
-    flex-direction: row;
-}
-
-.content .nav-link {
-    margin-top: 2em;
-    color: var(--color-3);
-    text-decoration: none;
-    background: linear-gradient(to left, var(--color-2), var(--color-1));
-    padding: 10px 20px;
-    font-weight: 600;
-    border-radius: 16px;
-    border: 3px var(--color-3) solid;
+.navigation-links li {
+    padding: 10px 15px;
+    border-radius: 10px;
+    margin: 0 5px;
     transition: 0.3s;
 }
 
-.content .nav-link:hover {
-    color: white;
-    border: white 3px solid;
+.navigation-links li a {
+    text-decoration: none;
+    color: var(--light-pink);
+    font-weight: 700;
+    font-size: 1.1em;
+    transition: 0.3s;
 }
 
-.aboutme-section {
+.navigation-links li a:hover {
+    color: white;
+}
+
+.navigation-links li:hover {
+    transform: translateY(-5px);
+    box-shadow: 3px 3px 5px black;
+}
+
+.main-content {
+    height: 100vh;
     width: 100%;
-    background: linear-gradient(to bottom, var(--color-2), var(--color-1));
-    height: 100%;
     display: flex;
-    flex-direction: column;
-    text-align: center;
-    position: absolute;
-    padding: 0 10em;
     justify-content: center;
-    right: 0;
-    border-top: 3px var(--color-3) solid;
+    align-items: center;
+    flex-direction: column;
+    transition: 0.7s;
 }
 
-.aboutme-section h1 {
-    color: var(--color-3);
-    font-size: 2.5em;
-    padding: 1em;
+.email {
+    position: absolute;
+    bottom: 30px;
+    position: fixed;
+    right: 30px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    padding: 7px 15px;
+    border-radius: 10px;
+    border: 1px solid var(--light-pink);
 }
 
-.aboutme-section p {
+.email a {
+    color: var(--light-pink);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.email a:hover {
     color: white;
 }
 
-.card {
-    padding: 0 5em;
-}
-
-@media screen and (max-width: 980px) {
-    .content {
-        width: 100%;
+@keyframes floating {
+    0% {
+        transform: translateY(5px);
     }
 
-    .aboutme-section {
-        position: relative;
-        width: 100%;
-        padding: 0;
-        font-size: 14px;
-        height: 100vh;
-        min-width: 300px;
-        background: linear-gradient(to bottom, var(--color-2), var(--color-1));
+    50% {
+        transform: translateY(-5px);
+    }
+
+    100% {
+        transform: translateY(5px);
     }
 }
 
-@media screen and (max-width: 823px) {
-    .content h1 {
-        font-size: 1.2em;
+#big-text-h1 {
+    font-size: 2em;
+    font-weight: 700;
+    color: var(--light);
+    animation: floating 2.5s infinite;
+}
+
+#big-text-h1 span {
+    font-size: 2.5em;
+    color: var(--light-pink);
+    font-weight: 900;
+    letter-spacing: -5px;
+    text-decoration: underline;
+}
+
+#aboutmeBtn {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: var(--light-pink);
+    font-weight: 600;
+    font-size: 1.2em;
+    margin-top: 10px;
+    border-radius: 10px;
+    background-color: var(--purple);
+    border: 3px solid var(--light-pink);
+    transition: 0.3s;
+}
+
+#aboutmeBtn:hover {
+    color: white;
+    border: white solid 3px;
+    transform: translateY(-5px) translateX(-5px);
+}
+
+#hamburger {
+    display: none;
+    color: var(--light-pink);
+    font-size: 2em;
+    position: fixed;
+    right: 7%;
+}
+
+.mobile-nav {
+    display: none;
+}
+
+.bg {
+    width: 0;
+    height: 100vh;
+    top: 0;
+    z-index: 998;
+    position: absolute;
+    background: var(--blue);
+    right: 0;
+    transition: 0.3s;
+    position: fixed;
+}
+
+#aboutme {
+    text-align: center;
+}
+
+.aboutme-content {
+    height: 100vh;
+}
+
+.big-text-title {
+    font-size: 2em;
+    font-weight: 900;
+    letter-spacing: 1px;
+    margin-top: 50px;
+    color: var(--light-pink);
+    text-decoration: underline;
+}
+
+.introduction {
+    background: var(--purple);
+    padding: 1.6em 0em;
+    border-top: white solid 3px;
+    border-bottom: white solid 3px;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.introduction-content {
+    padding: 3em 2em;
+}
+
+.introduction-content p {
+    font-weight: 600;
+    font-size: 1.1em;
+    color: var(--light);
+}
+
+@media screen and (max-width: 645px) {
+    .navigation-links {
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: absolute;
+        right: 50%;
+        left: 50%;
+        transform: translate(-50%, 50%);
+        z-index: 999;
+        display: none;
+        position: fixed;
+    }
+
+    .navigation-links li a {
+        text-align: center;
+        font-size: 1.5em;
+    }
+
+    .navigation-links li {
+        margin-bottom: 2em;
+    }
+
+    #hamburger {
+        display: flex;
+        text-decoration: none;
+        z-index: 1000;
+    }
+
+    #big-text-h1 {
+        font-size: 1.4em;
+        text-align: center;
+    }
+
+    #aboutmeBtn {
+        font-size: 1em;
+        padding: 7px 17px;
+    }
+
+    .showHam {
+        width: 100%;
+    }
+
+    .showHamNav {
+        display: flex;
     }
 }
