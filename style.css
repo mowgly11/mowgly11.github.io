@@ -18,7 +18,7 @@
 }
 
 body {
-    /*background: url(./imgs/nubelson-fernandes--Xqckh_XVU4-unsplash.jpg) no-repeat;*/
+    background: url(./imgs/nubelson-fernandes--Xqckh_XVU4-unsplash.jpg) no-repeat;
     background-size: cover;
     background-attachment: fixed;
 }
@@ -90,8 +90,7 @@ header {
     opacity: 0;
 }
 
-#header-title-1:hover +
-#header-title-2  {
+#header-title-1:hover+#header-title-2 {
     opacity: 1;
     transform: translateY(0);
 }
@@ -263,6 +262,38 @@ header {
     font-weight: 600;
     font-size: 1.1em;
     color: var(--light);
+}
+
+.introduction-content p span:nth-child(1) {
+    color: orange;
+}
+
+.introduction-content p span:nth-child(2) {
+    color: rgb(216, 45, 45)
+}
+
+.introduction-content p span:nth-child(3) {
+    color: rgb(75, 75, 255);
+}
+
+.introduction-content p span:nth-child(4) {
+    color: yellow;
+}
+
+.introduction-content p span:nth-child(5) {
+    color: green;
+}
+
+.introduction-content p span:nth-child(6) {
+    text-decoration: underline;
+}
+
+.introduction-content p span:nth-child(7) {
+    text-decoration: underline;
+}
+
+.introduction-content p span:nth-child(8) {
+    color: rgb(72, 41, 184);
 }
 
 @media screen and (max-width: 645px) {
