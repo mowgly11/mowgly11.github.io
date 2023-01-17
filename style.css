@@ -57,7 +57,7 @@ body {
     align-items: center;
     justify-content: center;
     transition: 0.8s ease;
-    z-index: 9999;
+    z-index: 99999999999999999999;
 }
 
 #loading-icon {
