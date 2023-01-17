@@ -430,4 +430,8 @@ header {
         font-weight: 600;
         text-align: left;
     }
+
+    .project {
+        padding: 2em 1em;
+    }
 }
