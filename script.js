@@ -14,4 +14,5 @@ window.addEventListener("load", () => {
 hamBtn.addEventListener("click", () => {
     document.getElementById("bg").classList.toggle("showHam");
     document.getElementById("navigation-links").classList.toggle("showHamNav");
+    document.getElementById("hamburger").classList.toggle("fixHam");
 });
