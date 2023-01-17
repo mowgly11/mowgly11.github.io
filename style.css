@@ -348,10 +348,11 @@ header {
     font-size: 1.1em;
     font-weight: 600;
     text-align: left;
-    margin-bottom: 15px
+    margin-bottom: 15px;
 }
 
 .visit-btn {
+    transition: 0.3s;
     color: var(--light-pink);
     letter-spacing: 2px;
     text-decoration: none;
@@ -359,6 +360,11 @@ header {
     border-radius: 6px;
     background-color: var(--purple);
     border: 3px solid white;
+    font-weight: 600;
+}
+
+.visit-btn:hover {
+    color: white;
 }
 
 .project-img img {
