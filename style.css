@@ -434,6 +434,12 @@ header {
 .flip-card-front {
     background-color: var(--purple);
     color: black;
+    display: flex;
+    flex-direction: column;
+}
+
+.flip-card-front h3 {
+    color: var(--light-pink);
 }
 
 .flip-card-back {

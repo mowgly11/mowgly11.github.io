@@ -16,10 +16,3 @@ hamBtn.addEventListener("click", () => {
     document.getElementById("navigation-links").classList.toggle("showHamNav");
     document.getElementById("hamburger").classList.toggle("fixHam");
 });
-
-function showFlippedImage() {
-    const elementUnflipped = document.getElementById("image-inflipped");
-    const elementFlipped = document.getElementById("image-flipped");
-
-    elementFlipped.style.opacity = 1;
-}
