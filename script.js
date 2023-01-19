@@ -23,10 +23,3 @@ function showFlippedImage() {
 
     elementFlipped.style.opacity = 1;
 }
-
-function showFlippedImageReverse() {
-    const elementUnflipped = document.getElementById("image-inflipped");
-    const elementFlipped = document.getElementById("image-flipped");
-
-    elementFlipped.style.opacity = 0;
-}
