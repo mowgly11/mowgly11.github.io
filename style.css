@@ -39,6 +39,19 @@
     scroll-behavior: smooth;
 }
 
+.hidden {
+    opacity: 0;
+    transition: all 1.5s;
+    transform: translateX(-100%);
+    filter: blur(3px);
+}
+
+.showing {
+    opacity: 1;
+    transform: translateX(0%);
+    filter: blur(0);
+}
+
 body {
     background: url(./imgs/nubelson-fernandes--Xqckh_XVU4-unsplash.jpg) no-repeat;
     background-size: cover;
