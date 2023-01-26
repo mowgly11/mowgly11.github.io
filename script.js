@@ -17,7 +17,5 @@ function openSite(link) {
 }
 
 hamBtn.addEventListener("click", () => {
-    document.getElementById("bg").classList.toggle("showHam");
-    document.getElementById("navigation-links").classList.toggle("showHamNav");
-    document.getElementById("hamburger").classList.toggle("fixHam");
+    document.getElementById("navigation").classList.toggle("showNavigation");
 });

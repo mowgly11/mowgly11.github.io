@@ -37,6 +37,7 @@
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
     scroll-behavior: smooth;
+    /*background-color: rgba(0, 114, 9, 0.2) !important;*/
 }
 
 .hidden {
@@ -58,49 +59,9 @@ body {
     background-attachment: fixed;
 }
 
-.loading-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--blue);
-    z-index: 999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: 0.8s ease;
-    z-index: 99999999999999999999;
-}
-
-#loading-icon {
-    font-size: 100px;
-    color: var(--light);
-    animation: spin 1s infinite linear;
-    z-index: 9999;
-}
-
-.hide {
-    width: 0;
-}
-
-.hide #loading-icon {
-    display: none;
-}
-
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
-
 header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 2em;
     border-radius: 0 0 0 20%;
@@ -116,52 +77,99 @@ header {
     cursor: default;
 }
 
-.title-division {
+/* NavBar CSS */
+
+.hamburger {
     display: flex;
+    cursor: pointer;
 }
 
-#header-title-2 {
+.bar {
+    background: var(--light-pink);
+    width: 7px;
+    border-radius: 3px;
+    margin-left: 5px;
+    height: 35px;
+}
+
+.navigation {
+    position: absolute;
+    right: 0;
+    transform: translateX(-100vw);
+    top: 0;
+    z-index: 999999;
+}
+
+.nav-background {
+    background-color: var(--purple);
+    height: 120px;
+    width: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5em;
+    border: 2px solid var(--light-pink);
+    margin: 15px;
     transition: 0.5s;
-    transform: translateY(-20px);
-    opacity: 0;
-    cursor: default;
-    text-decoration: underline;
+    position: absolute;
+    transform: translateX(-150px);
+    position: fixed;
 }
 
-#header-title-1:hover+#header-title-2 {
-    opacity: 1;
-    transform: translateY(0);
+#nav-background-1:hover {
+    border: 2px solid white;
 }
 
-.navigation-links {
-    display: flex;
-    list-style: none;
-}
-
-.navigation-links li {
-    padding: 10px 15px;
-    border-radius: 10px;
-    margin: 0 5px;
-    transition: 0.3s;
-}
-
-.navigation-links li a {
-    text-decoration: none;
-    color: var(--light-pink);
-    font-weight: 700;
-    font-size: 1.1em;
-    transition: 0.3s;
-}
-
-.navigation-links li a:hover {
+#nav-background-1:hover > #link-1 {
     color: white;
 }
 
-.navigation-links li:hover {
-    transform: translateY(-5px);
-    box-shadow: 3px 3px 5px black;
+#nav-background-2:hover {
+    border: 2px solid white;
 }
 
+#nav-background-2:hover > #link-2 {
+    color: white;
+}
+
+#nav-background-3:hover {
+    border: 2px solid white;
+}
+
+#nav-background-3:hover > #link-3 {
+    color: white;
+}
+
+/*.bg {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    background: red;
+}*/
+
+.nav-links {
+    text-decoration: none;
+    color: var(--light-pink);
+    font-size: 1.3em;
+    font-weight: 700;
+    transition: 0.5s;
+}
+
+.showNavigation #nav-background-1 {
+    transform: translateX(30px) translateY(70px);
+}
+
+.showNavigation #nav-background-2 {
+    transform: translateX(50px) translateY(220px);
+    transition-delay: 200ms;
+}
+
+.showNavigation #nav-background-3 {
+    transform: translateX(30px) translateY(380px);
+    transition-delay: 400ms;
+}
+
+/* Rest of CSS */
 .main-content {
     height: 100vh;
     width: 100%;
@@ -241,29 +249,6 @@ header {
     color: white;
     border: white solid 3px;
     transform: translateY(-5px) translateX(-5px);
-}
-
-.hamburger {
-    display: none;
-    color: var(--light-pink);
-    font-size: 2em;
-}
-
-.mobile-nav {
-    display: none;
-}
-
-.bg {
-    width: 0;
-    height: 100vh;
-    top: 0;
-    z-index: 998;
-    position: absolute;
-    background: var(--blue);
-    right: 0;
-    transition: 0.3s;
-    border-radius: 0 0 0 30%;
-    position: fixed;
 }
 
 #aboutme {
@@ -473,34 +458,6 @@ header {
 }
 
 @media screen and (max-width: 645px) {
-    .navigation-links {
-        align-items: center;
-        flex-direction: column;
-        position: absolute;
-        right: 10%;
-        top: 20%;
-        z-index: 999;
-        display: none;
-        position: fixed;
-    }
-
-    .navigation-links li a {
-        text-align: center;
-        font-size: 1.5em;
-    }
-
-    .navigation-links li {
-        margin-bottom: 2em;
-    }
-
-    .hamburger {
-        display: flex;
-        text-decoration: none;
-        z-index: 1000;
-        position: absolute;
-        right: 10vw;
-    }
-
     #big-text-h1 {
         font-size: 1.4em;
         text-align: center;
@@ -509,18 +466,6 @@ header {
     #aboutmeBtn {
         font-size: 1em;
         padding: 7px 17px;
-    }
-
-    .showHam {
-        width: 60%;
-    }
-
-    .fixHam {
-        position: fixed;
-    }
-
-    .showHamNav {
-        display: flex;
     }
 
     .description-project p {
