@@ -18,4 +18,5 @@ function openSite(link) {
 
 hamBtn.addEventListener("click", () => {
     document.getElementById("navigation").classList.toggle("showNavigation");
+    document.getElementById("hamburger").classList.toggle("animateBtn");
 });

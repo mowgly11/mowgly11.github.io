@@ -86,10 +86,24 @@ header {
 
 .bar {
     background: var(--light-pink);
-    width: 7px;
+    width: 8px;
     border-radius: 3px;
-    margin-left: 5px;
+    margin-left: 3px;
     height: 35px;
+    border: 2px solid var(--purple);
+    transition: 0.3s;
+}
+
+.animateBtn #bar1 {
+    transform: rotate(45deg) translateX(15px);
+}
+
+.animateBtn #bar2 {
+    opacity: 0;
+}
+
+.animateBtn #bar3 {
+    transform: rotate(-45deg) translateX(-15px);
 }
 
 .navigation {
