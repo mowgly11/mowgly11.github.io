@@ -494,3 +494,14 @@ header {
         padding: 2em 1em;
     }
 }
+
+@media screen and (max-width: 1033px) {
+    .project-img img {
+        display: none;
+    }
+
+    .project {
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+}
