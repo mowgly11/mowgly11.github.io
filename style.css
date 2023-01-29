@@ -224,18 +224,9 @@ header {
     }
 }
 
-.eye {
+.eyes {
     position: absolute;
-}
-
-#eye1 {
-    top: 40%;
-    left: 52.5%;
-}
-
-#eye2 {
-    top: 40%;
-    left: 45.5%;
+    top: 38vh;
 }
 
 #big-text-h1 {
@@ -481,6 +472,10 @@ header {
     #big-text-h1 {
         font-size: 1.4em;
         text-align: center;
+    }
+
+    .eyes, .face {
+        display: none;
     }
 
     #aboutmeBtn {
