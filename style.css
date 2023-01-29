@@ -229,6 +229,10 @@ header {
     top: 38vh;
 }
 
+#eye1, #eye2 {
+    margin: 15px;
+}
+
 #big-text-h1 {
     font-size: 2em;
     font-weight: 700;
