@@ -47,6 +47,12 @@
     filter: blur(3px);
 }
 
+.hidden2{
+    opacity: 0;
+    transition: all 1.5s;
+    filter: blur(3px);
+}
+
 .showing {
     opacity: 1;
     transform: translateX(0%);

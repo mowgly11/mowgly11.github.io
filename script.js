@@ -1,6 +1,7 @@
 const loading = document.querySelector(".loading-screen");
 const hamBtn = document.getElementById("hamburger");
 const hiddenElements = document.querySelectorAll(".hidden");
+const hiddenElements2 = document.querySelectorAll(".hidden2");
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -11,6 +12,7 @@ const observer = new IntersectionObserver((entries) => {
 });
 
 hiddenElements.forEach(element => observer.observe(element));
+hiddenElements2.forEach(element => observer.observe(element));
 
 function openSite(link) {
     window.open(`https://${link}`);
