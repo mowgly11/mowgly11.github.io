@@ -230,9 +230,15 @@ header {
     }
 }
 
+.face-div {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
 .eyes {
     position: absolute;
-    top: 38vh;
+    bottom: 0;
 }
 
 #eye1, #eye2 {
