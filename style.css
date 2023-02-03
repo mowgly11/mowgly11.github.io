@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mada:wght@200;300;400;500;600;700;900&display=swap');
 
 :root {
     --black: #0E050F;
@@ -31,6 +32,10 @@
     background-color: var(--blue);
 }
 
+.de, .ar {
+    display: none;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -38,6 +43,7 @@
     font-family: 'Montserrat', sans-serif;
     scroll-behavior: smooth;
     /*background-color: rgba(0, 114, 9, 0.2) !important;*/
+    border: 0px green solid;
 }
 
 .hidden {
@@ -67,13 +73,35 @@ body {
 
 header {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     padding: 2em;
-    border-radius: 0 0 0 20%;
     height: 10vh;
     position: absolute;
     width: 100%;
+}
+
+.language {
+    text-align: center;
+}
+
+.language h2 {
+    color: var(--light-pink);
+}
+
+.lang {
+    text-decoration: none;
+    color: var(--light-pink);
+    font-weight: 800;
+    transition: 0.3s;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 1.1em;
+    border: none;
+}
+
+.lang:hover {
+    color: white;
 }
 
 .title-division h1 {
@@ -256,7 +284,7 @@ header {
     color: var(--light-pink);
     font-weight: 900;
     letter-spacing: -5px;
-    text-decoration: underline;
+    font-family: 'Mada', sans-serif;
 }
 
 #aboutmeBtn {
@@ -292,16 +320,19 @@ header {
     letter-spacing: 1px;
     margin-top: 50px;
     color: var(--light-pink);
-    text-decoration: underline;
 }
 
-.introduction {
+.introduction:not(.ar) {
     background: var(--purple);
     padding: 1.6em 0em;
     border-top: white solid 3px;
     border-bottom: white solid 3px;
     border-radius: 8px;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .introduction-content {
@@ -332,11 +363,6 @@ header {
 
 .node-color {
     color: green;
-}
-
-.introduction-content p span:nth-child(6),
-.introduction-content p span:nth-child(7) {
-    text-decoration: underline;
 }
 
 .adobe-ps {
@@ -482,6 +508,12 @@ header {
 
 .flip-card-back a:hover {
     color: white;
+}
+
+.ar {
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Mada', sans-serif;
 }
 
 @media screen and (max-width: 645px) {

@@ -3,9 +3,11 @@ const hamBtn = document.getElementById("hamburger");
 const hiddenElements = document.querySelectorAll(".hidden");
 const hiddenElements2 = document.querySelectorAll(".hidden2");
 
+// animate when scrolling effect
+
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-        if(entry.isIntersecting) {
+        if (entry.isIntersecting) {
             entry.target.classList.add("showing");
         }
     })
@@ -14,14 +16,14 @@ const observer = new IntersectionObserver((entries) => {
 hiddenElements.forEach(element => observer.observe(element));
 hiddenElements2.forEach(element => observer.observe(element));
 
-function openSite(link) {
-    window.open(`https://${link}`);
-}
+//hamburger menu effect
 
 hamBtn.addEventListener("click", () => {
     document.getElementById("navigation").classList.toggle("showNavigation");
     document.getElementById("hamburger").classList.toggle("animateBtn");
 });
+
+// eye hover effect
 
 document.addEventListener('mousemove', (event) => {
     const mouseX = event.clientX;
@@ -48,4 +50,61 @@ function calculateAngle(cx, cy, ex, ey) {
     const rad = Math.atan2(dy, dx);
     const deg = rad * 180 / Math.PI;
     return deg
+}
+
+// change page language
+
+let language = localStorage.getItem("lang");
+if(!language) {
+    language = "en";
+    localStorage.setItem("lang", language);
+}
+
+switchLang(language);
+
+function switchLang(lang) {
+    const textsEnglish = document.querySelectorAll(".en");
+    const textsGerman = document.querySelectorAll(".de");
+    const textsArabic = document.querySelectorAll(".ar");
+
+    switch (lang) {
+        case "ar":
+            localStorage.setItem('lang', 'ar');
+            textsEnglish.forEach(e => {
+                e.style.display = 'none';
+            });
+            textsGerman.forEach(e => {
+                e.style.display = 'none';
+            });
+            textsArabic.forEach(e => {
+                e.style.display = 'block';
+            });
+            break;
+        case "en":
+            localStorage.setItem('lang', 'en');
+            textsEnglish.forEach(e => {
+                e.style.display = 'block';
+            });
+            textsGerman.forEach(e => {
+                e.style.display = 'none';
+            });
+            textsArabic.forEach(e => {
+                e.style.display = 'none';
+            });
+            break;
+        case "de":
+            localStorage.setItem('lang', 'de');
+            textsEnglish.forEach(e => {
+                e.style.display = 'none';
+            });
+            textsGerman.forEach(e => {
+                e.style.display = 'block';
+            });
+            textsArabic.forEach(e => {
+                e.style.display = 'none';
+            });
+            break;
+        default:
+            break;
+    }
 }
