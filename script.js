@@ -1,7 +1,8 @@
-const loading = document.querySelector(".loading-screen");
+const loading = document.querySelector(".loading");
 const hamBtn = document.getElementById("hamburger");
 const hiddenElements = document.querySelectorAll(".hidden");
 const hiddenElements2 = document.querySelectorAll(".hidden2");
+const body = document.body;
 
 // animate when scrolling effect
 
@@ -17,6 +18,10 @@ hiddenElements.forEach(element => observer.observe(element));
 hiddenElements2.forEach(element => observer.observe(element));
 
 //hamburger menu effect
+
+setTimeout(() => {
+    loading.classList.add('hideLoading');
+}, 2000);
 
 hamBtn.addEventListener("click", () => {
     document.getElementById("navigation").classList.toggle("showNavigation");
