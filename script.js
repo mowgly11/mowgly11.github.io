@@ -33,20 +33,27 @@ hamBtn.addEventListener("click", () => {
 document.addEventListener('mousemove', (event) => {
     const mouseX = event.clientX;
     const mouseY = event.clientY;
-
+    
     const face = document.getElementById("face");
     const rekt = face.getBoundingClientRect();
+    
+    console.log({ rekt })
 
     const faceX = rekt.left + rekt.width / 2;
     const faceY = rekt.top + rekt.height / 2;
-
+    
     const angle = calculateAngle(mouseX, mouseY, faceX, faceY);
 
     const eyes = document.querySelectorAll(".eye");
 
     eyes.forEach(eye => {
         eye.style.transform = `rotate(${90 + angle}deg)`
-    })
+    });
+    
+    const cursor = document.querySelector(".mouse");
+
+    cursor.style.top = `${mouseY}px`;
+    cursor.style.left = `${mouseX}px`;
 });
 
 function calculateAngle(cx, cy, ex, ey) {

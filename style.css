@@ -38,6 +38,7 @@
 }
 
 * {
+    cursor: none;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -84,6 +85,19 @@ header {
 
 .language {
     text-align: center;
+}
+
+.mouse {
+    background: var(--light-pink);
+    position: absolute;
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    bottom: 15px;
+    right: 10px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px var(--light-pink);
+    z-index: 99999999999998;
 }
 
 .language h2 {
