@@ -36,8 +36,6 @@ document.addEventListener('mousemove', (event) => {
     
     const face = document.getElementById("face");
     const rekt = face.getBoundingClientRect();
-    
-    console.log({ rekt })
 
     const faceX = rekt.left + rekt.width / 2;
     const faceY = rekt.top + rekt.height / 2;
@@ -49,11 +47,6 @@ document.addEventListener('mousemove', (event) => {
     eyes.forEach(eye => {
         eye.style.transform = `rotate(${90 + angle}deg)`
     });
-    
-    const cursor = document.querySelector(".mouse");
-
-    cursor.style.top = `${mouseY}px`;
-    cursor.style.left = `${mouseX}px`;
 });
 
 function calculateAngle(cx, cy, ex, ey) {
