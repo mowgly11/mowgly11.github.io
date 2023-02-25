@@ -35,24 +35,34 @@ I am always striving to improve my skills and stay current with the latest techn
       <div class="bar" id="bar3"></div>
     </div>
     <div class="settings">
-      <div class="language">
-        <button class="lang" onclick="switchLang('ar')"><img src="./imgs/morocco-flag.png" width="50" height="30" alt="arabic"></button>
-        <button class="lang" onclick="switchLang('en')"><img src="./imgs/american-flag.png" width="50" height="30" alt="english"></button>
-        <button class="lang" onclick="switchLang('de')"><img src="./imgs/german-flag.png" width="50" height="30" alt="german"></button>
+      <div class="select">
+        <div class="lang" onclick="switchLang('ar')"><img src="./imgs/morocco-flag.png" width="50" height="30" alt="arabic"></div>
+        <div class="lang" onclick="switchLang('en')"><img src="./imgs/american-flag.png" width="50" height="30" alt="english"></div>
+        <div class="lang" onclick="switchLang('de')"><img src="./imgs/german-flag.png" width="50" height="30" alt="german"></div>
+      </div>
+      <div class="themes">
+        <div class="theme" onclick="switchTheme('theme1')" id="theme1"></div>
+        <div class="theme" onclick="switchTheme('theme2')" id="theme2"></div>
+        <div class="theme" onclick="switchTheme('theme3')" id="theme3"></div>
       </div>
     </div>
     <nav class="navigation" id="navigation">
       <div class="bg" id="bg"></div>
       <div class="nav-background" id="nav-background-1">
-        <a class="nav-links en" id="link-1" href="#aboutme">About</a>
-        <a class="nav-links de" id="link-1" href="#aboutme">über mich</a>
-        <a class="nav-links ar" id="link-1" href="#aboutme">حول</a>
+        <a class="nav-links" id="link-1" href="javascript:window.open('https://github.com/mowgly11')">Github</a>
       </div>
       <div class="nav-background" id="nav-background-2">
-        <a class="nav-links" id="link-2" href="javascript:window.open('https://github.com/mowgly11')">Github</a>
+        <a class="nav-links" id="link-2" href="javascript:window.open('https://fiverr.com/johnmarcusb')">Fiverr</a>
       </div>
       <div class="nav-background" id="nav-background-3">
-        <a class="nav-links" id="link-3" href="javascript:window.open('https://fiverr.com/johnmarcusb')">Fiverr</a>
+        <a class="nav-links showLangs en" id="link-3" style="cursor: pointer;" onclick="showLangs()">Language</a>
+        <a class="nav-links showLangs de" id="link-3" style="cursor: pointer;" onclick="showLangs()">Sprache</a>
+        <a class="nav-links showLangs ar" id="link-3" style="cursor: pointer;" onclick="showLangs()">اللغة</a>
+      </div>
+      <div class="nav-background" id="nav-background-4">
+        <a class="nav-links en" style="cursor: pointer;" onclick="showThemes()" id="link-4">Theme</a>
+        <a class="nav-links de" style="cursor: pointer;" onclick="showThemes()" id="link-4">Thema</a>
+        <a class="nav-links ar" style="cursor: pointer;" onclick="showThemes()" id="link-4">الالوان</a>
       </div>
     </nav>
   </header>
@@ -72,10 +82,6 @@ I am always striving to improve my skills and stay current with the latest techn
       <a class="hidden2 en" id="aboutmeBtn" href="#aboutme">View More</a>
       <a class="hidden2 de" id="aboutmeBtn" href="#aboutme">Mehr sehen</a>
       <a class="hidden2 ar" id="aboutmeBtn" href="#aboutme">تصفح المزيد</a>
-
-      <div class="email en"><a href="mailto:oussamabouzalim4@gmail.com">Contact Me</a></div>
-      <div class="email de"><a href="mailto:oussamabouzalim4@gmail.com">kontaktiere mich</a></div>
-      <div style="font-family: 'Mada';" class="email ar"><a href="mailto:oussamabouzalim4@gmail.com">تواصل معي</a></div>
     </section>
     <section id="aboutme" class="aboutme-content">
       <div class="introduction">

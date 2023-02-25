@@ -2,12 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Mada:wght@200;300;400;500;600;700;900&display=swap');
 
 :root {
-    --black: #0E050F;
-    --light: #9388A2;
-    --purple: #341948;
-    --blue: #170B3B;
-    --pink: rgb(182, 0, 182);
-    --light-pink: rgb(218, 170, 255);
+    --clr-1: #000000;
+    --clr-2: #9388A2;
+    --clr-3: #341948;
+    --clr-4: #170B3B;
+    --clr-5: rgb(182, 0, 182);
+    --clr-6: rgb(218, 170, 255);
 }
 
 ::-webkit-scrollbar {
@@ -16,20 +16,20 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: var(--light-pink);
+    background-color: var(--clr-6);
     border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background-color: var(--pink);
+    background-color: var(--clr-5);
 }
 
 ::-webkit-scrollbar-thumb:active {
-    background-color: var(--purple);
+    background-color: var(--clr-3);
 }
 
 ::-webkit-scrollbar-track {
-    background-color: var(--blue);
+    background-color: var(--clr-4);
 }
 
 .de,
@@ -66,12 +66,6 @@
     filter: blur(0);
 }
 
-body {
-    background: url(./imgs/nubelson-fernandes--Xqckh_XVU4-unsplash.jpg) no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-}
-
 header {
     display: flex;
     justify-content: space-between;
@@ -82,18 +76,23 @@ header {
     width: 100%;
 }
 
-.language {
-    align-items: center;
-    text-align: center;
+.select {
+    display: flex;
+    transform: translateY(-200%);
+    transition: 0.5s;
 }
 
-.language h2 {
-    color: var(--light-pink);
+.showLangsIcons {
+    transform: translateY(0%);
 }
+
+.select .lang {
+    margin: 0 6px;
+} 
 
 .lang {
     text-decoration: none;
-    color: var(--light-pink);
+    color: var(--clr-6);
     font-weight: 800;
     transition: 0.3s;
     background-color: transparent;
@@ -102,13 +101,46 @@ header {
     border: none;
 }
 
+.themes {
+    display: flex;
+    position: absolute;
+    top: 30px;
+    transform: translateY(-250%);
+    transition: 0.5s;
+}
+
+.showThemes {
+    transform: translateY(0%);
+}
+
+.theme {
+    width: 50px;
+    height: 25px;
+    border: 2px white solid;
+    margin: 0 6px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#theme1 {
+    background-color: rgb(218, 170, 255);
+}
+
+#theme2 {
+    background-color: #735F32;
+}
+
+#theme3 {
+    background-color: #3A98B9;
+}
+
 .lang:hover {
     color: white;
 }
 
 .title-division h1 {
     font-weight: 900;
-    color: var(--light-pink);
+    color: var(--clr-6);
     text-decoration: none;
     cursor: default;
 }
@@ -120,7 +152,7 @@ header {
     width: 100%;
     position: absolute;
     position: fixed;
-    background: var(--blue);
+    background: var(--clr-4);
     z-index: 99999999999999;
     display: flex;
     align-items: center;
@@ -139,38 +171,38 @@ header {
 
 .dot:nth-child(1) {
     border: 5px solid transparent;
-    border-top: 5px solid var(--light-pink);
+    border-top: 5px solid var(--clr-6);
     animation: roll 1.5s infinite linear;
 }
 
 .dot:nth-child(2) {
     border: 5px solid transparent;
-    border-bottom: 5px solid var(--light-pink);
+    border-bottom: 5px solid var(--clr-6);
     animation: roll 1.5s infinite linear;
 }
 
 .dot:nth-child(1)::after {
     content: "";
-    background: var(--light-pink);
+    background: var(--clr-6);
     position: absolute;
     width: 15px;
     height: 15px;
     top: 15px;
     left: 10px;
     border-radius: 50%;
-    box-shadow: 0px 0px 10px var(--light-pink);
+    box-shadow: 0px 0px 10px var(--clr-6);
 }
 
 .dot:nth-child(2)::after {
     content: "";
-    background: var(--light-pink);
+    background: var(--clr-6);
     position: absolute;
     width: 15px;
     height: 15px;
     bottom: 15px;
     right: 10px;
     border-radius: 50%;
-    box-shadow: 0px 0px 10px var(--light-pink);
+    box-shadow: 0px 0px 10px var(--clr-6);
 }
 
 @keyframes roll {
@@ -194,12 +226,12 @@ header {
 }
 
 .bar {
-    background: var(--light-pink);
+    background: var(--clr-6);
     width: 8px;
     border-radius: 3px;
     margin-left: 3px;
     height: 35px;
-    border: 2px solid var(--purple);
+    border: 2px solid var(--clr-3);
     transition: 0.3s;
 }
 
@@ -224,14 +256,14 @@ header {
 }
 
 .nav-background {
-    background-color: var(--purple);
+    background-color: var(--clr-3);
     height: 120px;
     width: 120px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 0 50% 50% 50%;
-    border: 2px solid var(--light-pink);
+    border-radius: 50%;
+    border: 2px solid var(--clr-6);
     margin: 15px;
     transition: 0.5s;
     position: absolute;
@@ -248,44 +280,58 @@ header {
 }
 
 #nav-background-2:hover {
-    border: 2px solid #b9b9b9;
+    border: 2px solid white;
 }
 
 #nav-background-2:hover>#link-2 {
-    color: #b9b9b9;
+    color: white;
 }
 
 #nav-background-3:hover {
-    border: 2px solid #00b22d;
+    border: 2px solid white;
 }
 
 #nav-background-3:hover>#link-3 {
-    color: #00b22d;
+    color: white;
+}
+
+#nav-background-4:hover {
+    border: 2px solid white;
+}
+
+#nav-background-4:hover>#link-4 {
+    color: white;
 }
 
 .nav-links {
     text-decoration: none;
-    color: var(--light-pink);
+    color: var(--clr-6);
     font-size: 1.3em;
     font-weight: 700;
     transition: 0.5s;
 }
 
 .showNavigation #nav-background-1 {
-    transform: translateX(30px) translateY(70px);
+    transform: translateX(70px) translateY(30px);
 }
 
 .showNavigation #nav-background-2 {
-    transform: translateX(50px) translateY(220px);
-    transition-delay: 200ms;
+    transform: translateX(70px) translateY(180px);
 }
 
 .showNavigation #nav-background-3 {
-    transform: translateX(30px) translateY(380px);
-    transition-delay: 400ms;
+    transform: translateX(70px) translateY(340px);
 }
 
+.showNavigation #nav-background-4 {
+    transform: translateX(70px) translateY(490px);
+}
+
+/*Themes*/
+
+
 /* Rest of CSS */
+
 .main-content {
     height: 100vh;
     width: 100%;
@@ -306,11 +352,11 @@ header {
     padding: 7px 15px;
     border-radius: 10px;
     z-index: 9999999;
-    border: 1px solid var(--light-pink);
+    border: 1px solid var(--clr-6);
 }
 
 .email a {
-    color: var(--light-pink);
+    color: var(--clr-6);
     text-decoration: none;
     transition: 0.3s;
 }
@@ -352,12 +398,12 @@ header {
 #big-text-h1 {
     font-size: 2em;
     font-weight: 700;
-    color: var(--light);
+    color: var(--clr-2);
 }
 
 #big-text-h1 span {
     font-size: 2.5em;
-    color: var(--light-pink);
+    color: var(--clr-6);
     font-weight: 900;
     letter-spacing: -5px;
     font-family: 'Mada', sans-serif;
@@ -366,13 +412,13 @@ header {
 #aboutmeBtn {
     padding: 10px 20px;
     text-decoration: none;
-    color: var(--light-pink);
+    color: var(--clr-6);
     font-weight: 600;
     font-size: 1.2em;
     margin-top: 10px;
     border-radius: 10px;
-    background-color: var(--purple);
-    border: 3px solid var(--light-pink);
+    background-color: var(--clr-3);
+    border: 3px solid var(--clr-6);
     transition: 0.3s;
 }
 
@@ -395,11 +441,11 @@ header {
     font-weight: 900;
     letter-spacing: 1px;
     margin-top: 50px;
-    color: var(--light-pink);
+    color: var(--clr-6);
 }
 
 .introduction:not(.ar) {
-    background: var(--purple);
+    background: var(--clr-3);
     padding: 1.6em 0em;
     border-top: white solid 3px;
     border-bottom: white solid 3px;
@@ -418,7 +464,7 @@ header {
 .introduction-content p {
     font-weight: 600;
     font-size: 1.1em;
-    color: var(--light);
+    color: var(--clr-2);
 }
 
 .introduction-content p span:nth-child(1) {
@@ -457,7 +503,7 @@ header {
 
 .description-project {
     width: 65vh;
-    background-color: var(--purple);
+    background-color: var(--clr-3);
     border-radius: 16px;
     animation: floating 2s infinite;
     box-shadow: 5px 5px 15px black;
@@ -466,12 +512,12 @@ header {
 .big-text-title-project {
     font-size: 2em;
     font-weight: 800;
-    color: var(--light-pink);
+    color: var(--clr-6);
     padding: 0.6em;
 }
 
 .description-project p {
-    color: var(--light);
+    color: var(--clr-2);
     padding: 1em;
     font-size: 1.1em;
     font-weight: 600;
@@ -481,12 +527,12 @@ header {
 
 .visit-btn {
     transition: 0.3s;
-    color: var(--light-pink);
+    color: var(--clr-6);
     letter-spacing: 2px;
     text-decoration: none;
     padding: 10px 20px;
     border-radius: 6px;
-    background-color: var(--purple);
+    background-color: var(--clr-3);
     border: 3px solid white;
     font-weight: 600;
 }
@@ -513,7 +559,7 @@ header {
 
 .social-logo {
     font-size: 7em;
-    color: var(--light-pink);
+    color: var(--clr-6);
 }
 
 .flip-card {
@@ -559,24 +605,24 @@ header {
 }
 
 .flip-card-front {
-    background-color: var(--purple);
+    background-color: var(--clr-3);
     color: black;
     display: flex;
     flex-direction: column;
 }
 
 .flip-card-front h3 {
-    color: var(--light-pink);
+    color: var(--clr-6);
 }
 
 .flip-card-back {
-    background-color: var(--purple);
+    background-color: var(--clr-3);
     color: white;
     transform: rotateY(180deg);
 }
 
 .flip-card-back a {
-    color: var(--light-pink);
+    color: var(--clr-6);
     font-size: 2em;
     text-decoration: none;
     transition: 0.3s;
@@ -609,7 +655,7 @@ header {
     }
 
     .description-project p {
-        color: var(--light);
+        color: var(--clr-2);
         padding: 0.5em;
         font-size: 0.9em;
         font-weight: 600;
