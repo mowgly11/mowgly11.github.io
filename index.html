@@ -1,238 +1,272 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta property="og:title" content="OsamaBozalim" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="http://osamabozalim.me" />
-  <link rel="icon" type="image/x-icon" href="./imgs/js.png">
-  <meta property="og:image" content="https://avatars0.githubusercontent.com/u/44649257?s=400&v=4" />
-  <meta property="og:description" content="Welcome to my portfolio! My name is Osama and I am an 18-year-old Full Stack Developer with a passion for creating innovative and user-friendly web applications. My skills include HTML, CSS, JavaScript, NodeJS and various frameworks and libraries. I have experience in both Front-End and Back-End development, which allows me to build dynamic and responsive websites that provide a seamless user experience.
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="OsamaBozalim" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://osamabozalim.me" />
+    <link rel="icon" type="image/x-icon" href="./imgs/js.webp" />
+    <meta
+      property="og:image"
+      content="https://avatars0.githubusercontent.com/u/44649257?s=400&v=4"
+    />
+    <meta
+      property="og:description"
+      content="Welcome to my portfolio! My name is Osama and I am an 18-year-old Full Stack Developer with a passion for creating innovative and user-friendly web applications. My skills include HTML, CSS, JavaScript, NodeJS and various frameworks and libraries. I have experience in both Front-End and Back-End development, which allows me to build dynamic and responsive websites that provide a seamless user experience.
 
 In addition to my technical skills, I also have experience working with Adobe Photoshop. I have been using this software for several years, and have developed a strong understanding of its features and capabilities. I am able to create visually appealing designs and graphics that enhance the overall look and feel of a website. I also have experience in photo editing, creating logos, and other graphics work.
 
-I am always striving to improve my skills and stay current with the latest technologies in order to provide the best possible solutions for my clients. I am confident that my technical skills and graphic design experience make me a valuable asset for any project. I am a quick learner and a team player, I have a keen attention to detail, and I am able to meet tight deadlines. I am also able to communicate effectively with clients, team members and other stakeholders. Please take a look at my portfolio to see some of my work and if you have any questions, don't hesitate to reach out to me." />
-  <title>Osama - Portfolio</title>
-  <link rel="stylesheet" href="./style.css" type="text/css">
-  <script src="https://kit.fontawesome.com/f334197832.js" crossorigin="anonymous"></script>
-  <script src="./script.js" defer></script>
-</head>
+I am always striving to improve my skills and stay current with the latest technologies in order to provide the best possible solutions for my clients. I am confident that my technical skills and graphic design experience make me a valuable asset for any project. I am a quick learner and a team player, I have a keen attention to detail, and I am able to meet tight deadlines. I am also able to communicate effectively with clients, team members and other stakeholders. Please take a look at my portfolio to see some of my work and if you have any questions, don't hesitate to reach out to me."
+    />
+    <title>Osama - Portfolio</title>
+    <link rel="stylesheet" href="./style.css" type="text/css" />
+    <script
+      src="https://kit.fontawesome.com/f334197832.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./script.js" defer></script>
+  </head>
 
-<body class="blur">
-  <div class="loading" id="loading">
-    <div class="dot"></div>
-    <div class="dot"></div>
-    <div class="dot"></div>
-    <div class="dot"></div>
-  </div>
-  <header>
-    <div class="hamburger" id="hamburger">
-      <div class="bar" id="bar1"></div>
-      <div class="bar" id="bar2"></div>
-      <div class="bar" id="bar3"></div>
-    </div>
-    <div class="settings">
-      <div class="select">
-        <div class="lang" onclick="switchLang('ar')"><img src="./imgs/morocco-flag.png" width="50" height="30" alt="arabic"></div>
-        <div class="lang" onclick="switchLang('en')"><img src="./imgs/american-flag.png" width="50" height="30" alt="english"></div>
-        <div class="lang" onclick="switchLang('de')"><img src="./imgs/german-flag.png" width="50" height="30" alt="german"></div>
+  <body class="blur">
+    <header>
+      <div class="nav-bg">
+        <nav class="navigation" id="navigation">
+          <a
+            class="nav-links"
+            href="javascript:window.open('https://github.com/mowgly11')"
+            >Github</a
+          >
+          <a
+            class="nav-links"
+            href="javascript:window.open('https://www.youtube.com/channel/UCju5WMfD3idzucjvs6RwlyA')"
+            >Youtube</a
+          >
+          <a
+            class="nav-links"
+            href="javascript:window.open('https://fiverr.com/johnmarcusb')"
+            >Fiverr</a
+          >
+          <a class="nav-links" href="javascript:alert('soon')">Blog</a>
+        </nav>
       </div>
-      <div class="themes">
-        <div class="theme" onclick="switchTheme('theme1')" id="theme1"></div>
-        <div class="theme" onclick="switchTheme('theme2')" id="theme2"></div>
-        <div class="theme" onclick="switchTheme('theme3')" id="theme3"></div>
+      <div class="hamburger" id="hamburger">
+        <div class="bar" id="bar1"></div>
+        <div class="bar" id="bar2"></div>
+        <div class="bar" id="bar3"></div>
       </div>
-    </div>
-    <nav class="navigation" id="navigation">
-      <div class="bg" id="bg"></div>
-      <div class="nav-background" id="nav-background-1">
-        <a class="nav-links" id="link-1" href="javascript:window.open('https://github.com/mowgly11')">Github</a>
-      </div>
-      <div class="nav-background" id="nav-background-2">
-        <a class="nav-links" id="link-2" href="javascript:window.open('https://fiverr.com/johnmarcusb')">Fiverr</a>
-      </div>
-      <div class="nav-background" id="nav-background-3">
-        <a class="nav-links showLangs en" id="link-3" style="cursor: pointer;" onclick="showLangs()">Language</a>
-        <a class="nav-links showLangs de" id="link-3" style="cursor: pointer;" onclick="showLangs()">Sprache</a>
-        <a class="nav-links showLangs ar" id="link-3" style="cursor: pointer;" onclick="showLangs()">اللغة</a>
-      </div>
-      <div class="nav-background" id="nav-background-4">
-        <a class="nav-links en" style="cursor: pointer;" onclick="showThemes()" id="link-4">Theme</a>
-        <a class="nav-links de" style="cursor: pointer;" onclick="showThemes()" id="link-4">Thema</a>
-        <a class="nav-links ar" style="cursor: pointer;" onclick="showThemes()" id="link-4">الالوان</a>
-      </div>
-    </nav>
-  </header>
-  <main>
-    <section class="main-content">
-      <div class="face-div">
-        <img src="./imgs/face.png" alt="eye2" class="face" id="face" width="200" draggable="false">
-        <div class="eyes">
-          <img src="./imgs/eye.png" alt="eye1" class="eye" id="eye1" width="60" draggable="false">
-          <img src="./imgs/eye.png" alt="eye1" class="eye" id="eye2" width="60" draggable="false">
-        </div>
-      </div>
-      <div class="hidden en" id="big-text-h1">Hi! i'm Osama<br><span>Web Developer</span></div>
-      <div class="hidden de" id="big-text-h1">Hi! ich bin Osama<br><span>Web-Entwickler</span></div>
-      <div style="font-family: 'Mada';" class="hidden ar" id="big-text-h1">مرحبا. أنا أسامة<br><span>مبرمج ويب</span></div>
-
-      <a class="hidden2 en" id="aboutmeBtn" href="#aboutme">View More</a>
-      <a class="hidden2 de" id="aboutmeBtn" href="#aboutme">Mehr sehen</a>
-      <a class="hidden2 ar" id="aboutmeBtn" href="#aboutme">تصفح المزيد</a>
-    </section>
-    <section id="aboutme" class="aboutme-content">
-      <div class="introduction">
-        <div class="big-text-title hidden en">Introduction</div>
-        <div class="big-text-title hidden de">Einleitung</div>
-        <div class="big-text-title hidden ar">تقديم</div>
-        <div class="introduction-content hidden2">
-          <p class="en">Welcome to my portfolio! My name is Osama and I am an 18-year-old Full Stack Developer with a passion for creating innovative and user-friendly web applications. My skills include HTML, CSS, JavaScript, NodeJS and various frameworks and libraries. I have experience in both Front-End and Back-End development, which allows me to build dynamic and responsive websites that provide a seamless user experience.<br><br>
-
-            In addition to my technical skills, I also have experience working with Adobe Photoshop. I have been using this software for several years, and have developed a strong understanding of its features and capabilities. I am able to create visually appealing designs and graphics that enhance the overall look and feel of a website. I also have experience in photo editing, creating logos, and other graphics work.<br><br>
-
-            I am always striving to improve my skills and stay current with the latest technologies in order to provide the best possible solutions for my clients. I am confident that my technical skills and graphic design experience make me a valuable asset for any project. I am a quick learner and a team player, I have a keen attention to detail, and I am able to meet tight deadlines. I am also able to communicate effectively with clients, team members and other stakeholders. Please take a look at my portfolio to see some of my work and if you have any questions, don't hesitate to reach out to me.</p>
-
-
-          <p class="de">Willkommen in meinem Portfolio! Mein Name ist Osama und ich bin ein 18-jähriger Full-Stack-Entwickler mit einer Leidenschaft für die Erstellung innovativer und benutzerfreundlicher Webanwendungen. Meine Fähigkeiten umfassen HTML, CSS, JavaScript, NodeJS und verschiedene Frameworks und Bibliotheken. Ich habe Erfahrung sowohl in der Front-End- als auch in der Back-End-Entwicklung, was es mir ermöglicht, dynamische und reaktionsschnelle Websites zu erstellen, die eine nahtlose Benutzererfahrung bieten.<br><br>
-
-            Neben meinen technischen Fähigkeiten habe ich auch Erfahrung im Umgang mit Adobe Photoshop. Ich verwende diese Software seit mehreren Jahren und habe ein starkes Verständnis für ihre Funktionen und Fähigkeiten entwickelt. Ich bin in der Lage, visuell ansprechende Designs und Grafiken zu erstellen, die das allgemeine Erscheinungsbild einer Website verbessern. Ich habe auch Erfahrung in der Fotobearbeitung, dem Erstellen von Logos und anderen Grafikarbeiten.<br><br>
-
-            Ich bin stets bestrebt, meine Fähigkeiten zu verbessern und mit den neuesten Technologien auf dem Laufenden zu bleiben, um meinen Kunden die bestmöglichen Lösungen zu bieten. Ich bin zuversichtlich, dass meine technischen Fähigkeiten und meine Erfahrung im Grafikdesign mich zu einer wertvollen Bereicherung für jedes Projekt machen. Ich bin eine schnelle Auffassungsgabe und ein Teamplayer, ich habe ein Auge fürs Detail und kann enge Fristen einhalten. Ich bin auch in der Lage, effektiv mit Kunden, Teammitgliedern und anderen Interessengruppen zu kommunizieren. Bitte werfen Sie einen Blick auf mein Portfolio, um einige meiner Arbeiten zu sehen, und wenn Sie Fragen haben, zögern Sie nicht, mich zu kontaktieren.</p>
-
-
-          <p class="ar">مرحبا بكم في موقعي الالكترون! اسمي أسامة وأنا مطور مواقع الكترونية. ابلغ من العمر 18 سنة ولدي شغف لإنشاء تطبيقات ويب مبتكرة وسهلة الاستخدام. تشمل مهاراتي لغات برمجة عدة خاصة بتطوير المواقع و الخوادم وأطر عمل ومكتبات مختلفة. لدي خبرة في تطوير واجهات المستخدم و كذلك واجهات الخادم ، مما يسمح لي ببناء مواقع ويب ديناميكية ومتجاوبة توفر تجربة مستخدم سلسة.<br><br>
-
-            بالإضافة إلى مهاراتي الفنية ، لدي أيضًا خبرة في العمل باستخدام تطبيق الفوتوشوب. كنت أستخدم هذا البرنامج لعدة سنوات ، وقمت بتطوير فهم قوي لميزاته وقدراته. أنا قادر على إنشاء تصميمات ورسومات جذابة بصريًا تعزز المظهر العام والمظهر لموقع الويب. لدي أيضًا خبرة في تحرير الصور وإنشاء الشعارات وأعمال الرسومات الأخرى.<br><br>
-
-            أنا أسعى دائمًا لتحسين مهاراتي والبقاء على اطلاع بأحدث التقنيات من أجل تقديم أفضل الحلول الممكنة لعملائي. أنا واثق من أن مهاراتي الفنية وخبرتي في التصميم الجرافيكي تجعلني مساهما قيمًا لأي مشروع. أنا متعلم سريع واستطيع العمل في مجموعات ، ولدي اهتمام شديد بالتفاصيل ، وأنا قادر على الوفاء بالمواعيد النهائية الضيقة. كما أنني قادر على التواصل بشكل فعال مع العملاء وأعضاء الفريق وأصحاب المصلحة الآخرين. يرجى إلقاء نظرة على أعمالي ، وإذا كانت لديك أي أسئلة ، فلا تتردد في التواصل معي.
-          </p>
-        </div>
-      </div>
-      <div class="projects">
-        <div class="big-text-title hidden en">Projects</div>
-        <div class="big-text-title hidden de">Projekte</div>
-        <div class="big-text-title hidden ar">المشاريع</div>
-        <div class="projects-content">
-          <div class="project-1 project">
-            <div class="description-project hidden">
-              <div class="big-text-title-project">OTools API</div>
-              <p class="en">Otools API is a powerful API that helps you with a bunch of online useful tools that can be used in any projects. it was built with <span class='node-color'>NodeJS</span>, <span class='javascript-color'>Express</span> including some very popular libraries. <br><br>Otools API is using one of the fastest cloud computing services and high quality code which makes it fast enough to use in production. <br><br> This project serves as a valuable tool for anyone in need of quick and reliable online tools API, and is a great addition to any portfolio. </p>
-              <p class="de">Die Otools-API ist eine leistungsstarke API, die Ihnen mit einer Reihe nützlicher Online-Tools hilft, die in allen Projekten verwendet werden können. Es wurde mit NodeJS, Express und Passport.js erstellt, einschließlich einiger sehr beliebter Bibliotheken. <br><br>Otools API verwendet einen der schnellsten Cloud-Computing-Dienste und hochwertigen Code, wodurch es schnell genug ist, um in der Produktion verwendet zu werden.<br><br> Dieses Projekt dient als wertvolles Tool für alle, die eine schnelle und zuverlässige API für Online-Tools benötigen, und ist eine großartige Ergänzung für jedes Portfolio. </p>
-              <p class="ar">هي واجهة برمجة تطبيقات قوية تساعدك في مجموعة من الأدوات المفيدة عبر الإنترنت التي يمكن استخدامها في أي مشروع. تم إنشاؤه باستخدام الجافاسكربت و النود بما في ذلك بعض المكتبات المشهورة جدًا.<br><br>
-
-                يستخدم هذا المشروع واحدة من أسرع خدمات الحوسبة السحابية واكواد عالية الجودة مما يجعلها سريعة بما يكفي لاستخدامها في الإنتاج.<br><br>
-
-                يعد هذا المشروع بمثابة أداة قيمة لأي شخص يحتاج إلى واجهة برمجة تطبيقات سريعة وموثوقة للأدوات عبر الإنترنت ، كما يعد إضافة رائعة لأي موقع شخصي.</p>
-              <a class="visit-btn en" href="javascript:window.open('https://otools-api.tech/')">VISIT</a>
-              <a class="visit-btn de" href="javascript:window.open('https://otools-api.tech/')">BESUCHEN</a>
-              <a class="visit-btn ar" href="javascript:window.open('https://otools-api.tech/')">زيارة</a>
-            </div>
-            <div class="project-img hidden2">
-              <img src="./imgs/cur-conv.png" alt="project 1 Image" width="450" draggable="false">
-            </div>
-          </div>
-          <div class="project-2 project">
-            <div class="project-img hidden">
-              <img src="./imgs/otools.png" alt="project 1 Image" width="350" draggable="false">
-            </div>
-            <div class="description-project hidden2">
-              <div class="big-text-title-project">Currency Converter</div>
-              <p class="en">currency converter website project is an intuitive and user-friendly tool for converting between various currencies from around the world.<br><br> built with <span class="html-color">HTML</span>, <span class="css-color">CSS</span>, <span class="javascript-color">JavaScript</span> and <span class="node-color">Currencyapi</span> The website features a clean and modern interface with easy navigation, making it simple for anyone to use. The project utilizes state-of-the-art algorithms to ensure that the conversions are as precise as possible, and the exchange rates are updated in real-time to provide accurate information to the user.<br><br> Additionally, the website is mobile-responsive, allowing for easy access from any device. As a part of this project, our team has put a lot of effort to make it user-friendly, reliable and accurate. This project serves as a valuable tool for anyone in need of quick and reliable currency conversions, and is a great addition to any portfolio.</p>
-              <p class="de">Das Währungsumrechner-Website-Projekt ist ein intuitives und benutzerfreundliches Tool zum Umrechnen zwischen verschiedenen Währungen aus der ganzen Welt. <br><br> gebaut mit HTML, CSS, JavaScript und Currencyapi Die Website verfügt über eine übersichtliche und moderne Benutzeroberfläche mit einfacher Navigation, die die Verwendung für jedermann einfach macht. Das Projekt verwendet hochmoderne Algorithmen, um sicherzustellen, dass die Umrechnungen so genau wie möglich sind, und die Wechselkurse werden in Echtzeit aktualisiert, um dem Benutzer genaue Informationen bereitzustellen. <br><br> Darüber hinaus reagiert die Website auf Mobilgeräte und ermöglicht einen einfachen Zugriff von jedem Gerät aus. Als Teil dieses Projekts hat unser Team viel Mühe darauf verwendet, es benutzerfreundlich, zuverlässig und genau zu machen. Dieses Projekt dient als wertvolles Werkzeug für alle, die schnelle und zuverlässige Währungsumrechnungen benötigen, und ist eine großartige Ergänzung für jedes Portfolio.</p>
-              <p class="ar">مشروع موقع تحويل العملات هو أداة بديهية وسهلة الاستخدام للتحويل بين العملات المختلفة من جميع أنحاء العالم.<br><br>
-
-                تم إنشاؤه باستخدام عدة لغات برمجة و ايضا واجهة برمجة تحويل العملات. يتميز موقع الويب بواجهة نظيفة وحديثة مع سهولة التنقل ، مما يسهل على أي شخص استخدامه. يستخدم المشروع أحدث الخوارزميات لضمان أن تكون التحويلات دقيقة قدر الإمكان ، ويتم تحديث أسعار الصرف في الوقت الفعلي لتوفير معلومات دقيقة للمستخدم.<br><br>
-
-                بالإضافة إلى ذلك ، يستجيب موقع الويب للجوّال ، مما يتيح سهولة الوصول إليه من أي جهاز. كجزء من هذا المشروع ، بذل فريقنا الكثير من الجهد لجعله سهل الاستخدام وموثوقًا ودقيقًا. يعتبر هذا المشروع أداة قيمة لأي شخص في حاجة إلى تحويلات سريعة وموثوقة للعملات ، وهو إضافة رائعة لأي موقع شخصي.
-              </p>
-              <a class="visit-btn en" href="javascript:window.open('https://osamabozalim.me/currency-converter/')">VISIT</a>
-              <a class="visit-btn de" href="javascript:window.open('https://osamabozalim.me/currency-converter/')">BESUCHEN</a>
-              <a class="visit-btn ar" href="javascript:window.open('https://osamabozalim.me/currency-converter/')">زيارة</a>
-            </div>
-          </div>
-          <div class="project-3 project">
-            <div class="description-project hidden2">
-              <div class="big-text-title-project">Earth Bot</div>
-              <p class="en">Earth Bot is a powerful Discord Bot build with <span class="node-color">NodeJS</span> and <span class="adobe-ps">TypeScript</span> using the DiscordJS Library. Earth Bot Provides a bunch of features which made it a popular bot that can be found in more than 1400 servers and Millions of users using it.<br><br>And what makes Earth Bot even more special is the speed and The high optimisation which makes it able to serve multiple requests without any slow or crash errors.<br><br>This project serves as a valuable tool for anyone interested Making their Discord server active and Fun. It's also a great addition to any portfolio as it showcases my ability to create and interact with external API's and technologies.</p>
-              <p class="de">Earth Bot ist ein leistungsstarker Discord Bot, der mit NodeJS und TypeScript unter Verwendung der DiscordJS-Bibliothek erstellt wurde. Earth Bot Bietet eine Reihe von Funktionen, die ihn zu einem beliebten Bot gemacht haben, der auf mehr als 1400 Servern zu finden ist und von Millionen von Benutzern verwendet wird.<br><br>Und was Earth Bot noch spezieller macht, ist die Geschwindigkeit und die hohe Optimierung, die es ihm ermöglicht, mehrere Anfragen ohne langsame oder Absturzfehler zu bedienen.<br><br>Dieses Projekt dient als wertvolles Werkzeug für alle, die daran interessiert sind, ihren Discord-Server aktiv und unterhaltsam zu gestalten. Es ist auch eine großartige Ergänzung für jedes Portfolio, da es meine Fähigkeit demonstriert, externe APIs und Technologien zu erstellen und mit ihnen zu interagieren.</p>
-              <p class="ar">عبارة عن روبوت دسكورد رائع باستخدام الجافاسكربت. يوفر مجموعة من الميزات التي جعلت منه روبوتًا شائعًا يمكن العثور عليه في أكثر من 1400 خادم وملايين المستخدمين الذين يستخدمونه.<br><br>
-
-                وما يجعله أكثر روعة هو السرعة والتحسين العالي الذي يجعله قادرًا على خدمة طلبات متعددة دون أي أخطاء أو تعطل.<br><br>
-
-                يخدم هذا المشروع كأداة قيمة لأي شخص مهتم بجعل خادم دسكورد الخاص به نشطًا وممتعًا. إنها أيضًا إضافة رائعة إلى أي موقع شخصي حيث تُظهر قدرتي على إنشاء واجهة برمجة تطبيقات وتقنيات خارجية والتفاعل معها.
-              </p>
-              <a class="visit-btn en" href="javascript:window.open('https://top.gg/bot/856696786550521908')">VISIT</a>
-              <a class="visit-btn de" href="javascript:window.open('https://top.gg/bot/856696786550521908')">BESUCHEN</a>
-              <a class="visit-btn ar" href="javascript:window.open('https://top.gg/bot/856696786550521908')">زيارة</a>
-            </div>
-            <div class="project-img hidden2">
-              <img src="./imgs/Earth.png" alt="project 1 Image" width="350" draggable="false" style="border-radius: 100%;">
-            </div>
+    </header>
+    <main>
+      <section class="main-content">
+        <div class="face-div">
+          <img
+            src="./imgs/face.webp"
+            alt="eye2"
+            class="face"
+            id="face"
+            width="200"
+            draggable="false"
+          />
+          <div class="eyes">
+            <img
+              src="./imgs/eye.webp"
+              alt="eye1"
+              class="eye"
+              id="eye1"
+              width="60"
+              draggable="false"
+            />
+            <img
+              src="./imgs/eye.webp"
+              alt="eye1"
+              class="eye"
+              id="eye2"
+              width="60"
+              draggable="false"
+            />
           </div>
         </div>
-      </div>
-      <div class="social">
-        <div class="big-text-title hidden en">Contacts</div>
-        <div class="big-text-title hidden de">Kontakte</div>
-        <div class="big-text-title hidden ar">تواصل</div>
-        <div class="social-container">
-          <div class="flip-card flip-card-late hidden">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <i class="fa-brands fa-discord social-logo"></i>
-                <h3>Discord</h3>
+        <div class="hidden en" id="big-text-h1">
+          Hi! i'm Osama<br /><span>Web Developer</span>
+        </div>
+
+        <a class="hidden2 en" id="aboutmeBtn" href="#aboutme">View More</a>
+      </section>
+      <section id="aboutme" class="aboutme-content">
+        <div class="introduction">
+          <div class="big-text-title hidden en">Introduction</div>
+          <div class="introduction-content hidden2">
+            <p>
+              Welcome to my portfolio! My name is Osama and I am an 18-year-old
+              Full Stack Developer with a passion for creating innovative and
+              user-friendly web applications. My skills include HTML, CSS,
+              JavaScript, NodeJS and various frameworks and libraries. I have
+              experience in both Front-End and Back-End development, which
+              allows me to build dynamic and responsive websites that provide a
+              seamless user experience.<br /><br />
+
+              In addition to my technical skills, I also have experience working
+              with Adobe Photoshop. I have been using this software for several
+              years, and have developed a strong understanding of its features
+              and capabilities. I am able to create visually appealing designs
+              and graphics that enhance the overall look and feel of a website.
+              I also have experience in photo editing, creating logos, and other
+              graphics work.<br /><br />
+
+              I am always striving to improve my skills and stay current with
+              the latest technologies in order to provide the best possible
+              solutions for my clients. I am confident that my technical skills
+              and graphic design experience make me a valuable asset for any
+              project. I am a quick learner and a team player, I have a keen
+              attention to detail, and I am able to meet tight deadlines. I am
+              also able to communicate effectively with clients, team members
+              and other stakeholders. Please take a look at my portfolio to see
+              some of my work and if you have any questions, don't hesitate to
+              reach out to me.
+            </p>
+          </div>
+        </div>
+        <div class="projects">
+          <div class="big-text-title hidden en">Projects</div>
+          <div class="projects-content">
+            <div class="project-1 project">
+              <div class="description-project hidden">
+                <div class="big-text-title-project">Remember School</div>
+                <p>
+                  RememberSchool is a software that provides useful tools for
+                  students in school. Our main focus is helping students build
+                  the perfect portfolio for their future endeavors such as
+                  college, trade school, military school, ect.<br /><br />
+                  it was built with NodeJS and Express for http requests
+                  handling, Html, css, Javascript and webpack as UI
+                  technologies, and mongodb as a database including some very
+                  popular libraries. <br /><br />
+                  This project serves as a valuable tool for anyone in need of
+                  school assistance and advice on improving their studying
+                  experience, and is a great addition to any portfolio.
+                </p>
+                <a
+                  class="visit-btn en"
+                  href="javascript:window.open('https://rememberschool.azurewebsites.net/')"
+                  >VISIT</a
+                >
               </div>
-              <div class="flip-card-back">
-                <h1>SXY#8523</h1>
+              <div class="project-img hidden2">
+                <img
+                  src="./imgs/cur-conv.webp"
+                  alt="project 1 Image"
+                  width="450"
+                  draggable="false"
+                />
               </div>
             </div>
-          </div>
-          <div class="flip-card hidden">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <i class="fa-brands fa-github social-logo"></i>
-                <h3>Github</h3>
+            <div class="project-2 project">
+              <div class="project-img hidden">
+                <img
+                  src="./imgs/otools.webp"
+                  alt="project 1 Image"
+                  width="300"
+                  draggable="false"
+                />
               </div>
-              <div class="flip-card-back">
-                <a class="en" href="javascript:window.open('https://www.github.com/mowgly11')">VISIT</a>
-                <a class="de" href="javascript:window.open('https://www.github.com/mowgly11')">BESUCHEN</a>
-                <a class="ar" href="javascript:window.open('https://www.github.com/mowgly11')">زيارة</a>
+              <div class="description-project hidden2">
+                <div class="big-text-title-project">PasteBlend</div>
+                <p>
+                  PasteBlend is an easy to use tool for transfering text or
+                  files between 2 devices using a custom codes system.
+                  <br /><br />
+                  Pasteblend was built using NodeJS express and socket.io as
+                  backend technologies, and EJS, Css, Javascript and webpack for
+                  the frontend. <br /><br />
+                  Pasteblend is a valuable tool to allow users share their files
+                  between their devices without having to download or
+                  authenticate into any service as its fast, reliable and
+                  secure.
+                </p>
+                <a
+                  class="visit-btn en"
+                  href="javascript:window.open('https://osamabozalim.me/currency-converter/')"
+                  >VISIT</a
+                >
               </div>
             </div>
-          </div>
-          <div class="flip-card flip-card-late hidden2">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <i class="fa-regular fa-envelope social-logo"></i>
-                <h3>Gmail</h3>
+            <div class="project-3 project">
+              <div class="description-project hidden2">
+                <div class="big-text-title-project">Earth Bot</div>
+                <p>
+                  Earth bot is a powerful discord bot focused mainly in making
+                  your discord server fun with its leveling and economy system,
+                  as well as social activities and games.<br /><br />Earth bot
+                  was built using NodeJS and the Discord.js library to
+                  facilitate interacting with the discord api. currently, Earth
+                  bot is located in more than 1400 discord servers and many
+                  people are using it daily.<br /><br />This project serves as a
+                  valuable tool for anyone interested Making their Discord
+                  server active and Fun. It's also a great addition to any
+                  portfolio as it showcases my ability to create and interact
+                  with external API's and technologies.
+                </p>
+                <a
+                  class="visit-btn en"
+                  href="javascript:window.open('https://top.gg/bot/856696786550521908')"
+                  >VISIT</a
+                >
               </div>
-              <div class="flip-card-back">
-                <a class="en" href="mailto:oussamabouzalim4@gmail.com">VISIT</a>
-                <a class="de" href="mailto:oussamabouzalim4@gmail.com">BESUCHEN</a>
-                <a class="ar" href="mailto:oussamabouzalim4@gmail.com">زيارة</a>
-              </div>
-            </div>
-          </div>
-          <div class="flip-card hidden2">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <i class="fa-solid fa-briefcase social-logo"></i>
-                <h3>Fiverr</h3>
-              </div>
-              <div class="flip-card-back">
-                <a class="en" href="javascript:window.open('https://www.fiverr.com/johnmarcusb')">VISIT</a>
-                <a class="de" href="javascript:window.open('https://www.fiverr.com/johnmarcusb')">BESUCHEN</a>
-                <a class="ar" href="javascript:window.open('https://www.fiverr.com/johnmarcusb')">زيارة</a>
+              <div class="project-img hidden2">
+                <img
+                  src="./imgs/Earth.webp"
+                  alt="project 1 Image"
+                  width="350"
+                  draggable="false"
+                  style="border-radius: 100%"
+                />
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-  </main>
-</body>
-
+        <div class="social">
+          <div class="big-text-title hidden en">Contacts</div>
+          <div class="social-container">
+            <div class="flip-card hidden">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="./imgs/github.webp" alt="fiverr" width="120" />
+                </div>
+                <div class="flip-card-back">
+                  <a
+                    href="javascript:window.open('https://www.github.com/mowgly11')"
+                    >Check</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="flip-card flip-card-late hidden2">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="./imgs/gmail.webp" alt="fiverr" width="120" />
+                </div>
+                <div class="flip-card-back">
+                  <a href="mailto:oussamabouzalim4@gmail.com">Contact</a>
+                </div>
+              </div>
+            </div>
+            <div class="flip-card hidden2">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="./imgs/fiverr.webp" alt="fiverr" width="120" />
+                </div>
+                <div class="flip-card-back">
+                  <a
+                    href="javascript:window.open('https://www.fiverr.com/johnmarcusb')"
+                    >Visit</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
