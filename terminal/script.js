@@ -73,10 +73,13 @@ function executeCommand(userCmd) {
 
         let elements = [...allInputs, ...allTexts, ...allDivs, terminalTop, terminalWindow];
 
-        elements.forEach(async element => {
-            wait(currentDelay).then(() => element.remove());
-            currentDelay += 200;
-        });
+        for (let i = 0; i < elements.length; i++) {
+            setTimeout(() => {
+                console.log(`removing ${elements[i]}`);
+                elements[i].remove();
+            }, currentDelay);
+            currentDelay += 10;
+        }
     } else if (userCmd === "cat hobbies.html") {
         let hobbiesIndex = 0;
         let asciiKeys = Object.keys(asciiArt);
@@ -92,7 +95,7 @@ function executeCommand(userCmd) {
                         hobbiesIndex++;
                     }
                     terminalOutputText.innerHTML += `<p class='text-center' style='font-size: 2.7px; margin: 0;'>${line.split("").map(l => l + " ").join("")}</p>`;
-                    if(index === asciiArt[key].length - 1) terminalWindow.scrollBy(0, 1000);
+                    if (index === asciiArt[key].length - 1) terminalWindow.scrollBy(0, 1000);
                 });
                 currentAsciiDelay += 20;
             });
