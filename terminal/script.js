@@ -75,7 +75,6 @@ function executeCommand(userCmd) {
 
         for (let i = 0; i < elements.length; i++) {
             setTimeout(() => {
-                console.log(`removing ${elements[i]}`);
                 elements[i].remove();
             }, currentDelay);
             currentDelay += 10;
