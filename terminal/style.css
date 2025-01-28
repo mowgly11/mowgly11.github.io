@@ -116,3 +116,9 @@
         display: none;
     }
 }
+
+@media screen and (max-width: 900px) {
+    .terminal-text {
+        font-size: 18px;
+    }
+}
