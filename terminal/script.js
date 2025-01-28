@@ -1,4 +1,5 @@
 let possibleCommands = await fetch("./commands_data.json").then(data => data.json());
+let asciiArt = await fetch("./hobbies_art.json").then(data => data.json());
 
 let windowResolution = document.querySelector("#resolution");
 let terminalWindow = document.querySelector(".terminal");
@@ -12,6 +13,7 @@ let vesionText = document.getElementById("version");
 let lastUsedCommands = [];
 let lastUsedCommandsIndex;
 let currentDelay = 500;
+let currentAsciiDelay = 0;
 let isOnFullScreen = false;
 
 document.getElementById("expand-dot").onclick = () => toggleFullscreen();
@@ -75,6 +77,28 @@ function executeCommand(userCmd) {
             wait(currentDelay).then(() => element.remove());
             currentDelay += 200;
         });
+    } else if (userCmd === "cat hobbies.html") {
+        let hobbiesIndex = 0;
+        let asciiKeys = Object.keys(asciiArt);
+
+        let hobbiesList = ["Cards", "Programming", "Reading", "Workout"];
+        let terminalOutputText = terminalOutput.querySelector(".terminal-text");
+
+        asciiKeys.forEach(key => {
+            asciiArt[key].forEach(async (line, index) => {
+                wait(currentAsciiDelay).then(() => {
+                    if (index === 0) {
+                        terminalOutputText.innerHTML += `<h1 class='text-center'><b>${hobbiesList[hobbiesIndex]}</b></h1>`;
+                        hobbiesIndex++;
+                    }
+                    terminalOutputText.innerHTML += `<p class='text-center' style='font-size: 2.7px; margin: 0;'>${line.split("").map(l => l + " ").join("")}</p>`;
+                    if(index === asciiArt[key].length - 1) terminalWindow.scrollBy(0, 1000);
+                });
+                currentAsciiDelay += 20;
+            });
+        })
+
+        currentAsciiDelay = 200;
     } else if (userCmd.startsWith("echo")) {
         let echoing = userCmd.split(" ");
         echoing.shift();
