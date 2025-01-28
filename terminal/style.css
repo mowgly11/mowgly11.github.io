@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Ubuntu Mono', sans-serif;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --terminal-dark: #242424;
+    --terminal-white: #f1f1f1;
+}
+
+.terminal {
+    height: 80vh;
+    width: 85vw;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #242424;
+    border-radius: 15px;
+    overflow: auto;
+    scrollbar-width: none;
+    box-shadow: 0 0 25px rgb(0, 0, 0, .5);
+}
+
+.terminal-top {
+    background-color: var(--terminal-white);
+    width: 85vw;
+    height: 50px;
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+    position: fixed;
+    z-index: 5;
+    top: 10vh;
+    left: 7.5vw;
+}
+
+.dot {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    position: absolute;
+    top: 25px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    opacity: .7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+#red-dot {
+    background-color: red;
+    left: 20px;
+}
+
+#expand-dot {
+    background-color: gray;
+    left: 50px;
+}
+
+#minimize-dot {
+    background-color: gray;
+    left: 80px;
+}
+
+.terminal-title {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 270px;
+}
+
+.terminal-body {
+    padding: 20px;
+    padding-top: 60px;
+}
+
+.terminal-body-command {
+    display: flex;
+    align-items: center;
+}
+
+.terminal-text {
+    font-size: 25px;
+    color: white;
+    margin: 5px 0;
+}
+
+.command-line {
+    background-color: transparent;
+    border: none;
+    outline: 0;
+    letter-spacing: 1.5px;
+    width: 100%;
+    padding: 5px;
+}
+
+#version {
+    position: absolute;
+    bottom: 5px;
+    right: 25px;
+}
+
+@media screen and (max-width: 530px) {
+    .dot {
+        display: none;
+    }
+}
