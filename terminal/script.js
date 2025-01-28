@@ -47,6 +47,15 @@ function handleEnterKey(e, inputNode) {
 
         if (lastUsedCommandsIndex === 0) return;
         lastUsedCommandsIndex--;
+    }else if (e.key === "ArrowDown") {
+        if (lastUsedCommandsIndex == null) return;
+        inputNode.value = lastUsedCommands[lastUsedCommandsIndex];
+
+        if (checkValidCommand(inputNode.value?.trim())) inputNode.style.color = "#608ffc";
+        else inputNode.style.color = "white";
+
+        if (lastUsedCommandsIndex === lastUsedCommands.length-1) return;
+        lastUsedCommandsIndex++;
     }
 }
 
