@@ -61,13 +61,10 @@ function executeCommand(userCmd) {
 
     const commandExists = possibleCommands.find(cmd => cmd.split("::")[0] === userCmd);
 
-    if (userCmd === "clear") {
-        terminalBody.innerHTML = "";
-    } else if (userCmd === "poweroff" || userCmd === "exit") {
-        window.close();
-    } else if (userCmd === "reboot") {
-        location.reload();
-    } else if (userCmd === "sudo rm -rf /") {
+    if (userCmd === "clear") terminalBody.innerHTML = "";
+    else if (userCmd === "poweroff" || userCmd === "exit") window.close();
+    else if (userCmd === "reboot") location.reload();
+    else if (userCmd === "sudo rm -rf /") {
         let allInputs = document.querySelectorAll("input");
         let allTexts = document.querySelectorAll("p");
         let allDivs = document.querySelectorAll("div");
