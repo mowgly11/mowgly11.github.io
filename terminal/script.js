@@ -12,8 +12,8 @@ let vesionText = document.getElementById("version");
 let lastUsedCommands = [];
 let lastUsedCommandsIndex;
 let currentDelay = 500;
-
 let isOnFullScreen = false;
+
 document.getElementById("expand-dot").onclick = () => toggleFullscreen();
 document.getElementById("red-dot").onclick = () => window.close();
 
@@ -38,25 +38,21 @@ function handleEnterKey(e, inputNode) {
         executeCommand(cmd);
 
         addNewTerminalLine();
-    } else if (e.key === "ArrowUp") {
-        if (lastUsedCommandsIndex == null) return;
-        inputNode.value = lastUsedCommands[lastUsedCommandsIndex];
+    } else if (e.key === "ArrowUp") navigateCommandHistory(-1, inputNode, 0);
+    else if (e.key === "ArrowDown") navigateCommandHistory(1, inputNode, lastUsedCommands.length - 1);
 
-        if (checkValidCommand(inputNode.value?.trim())) inputNode.style.color = "#608ffc";
-        else inputNode.style.color = "white";
+}
 
-        if (lastUsedCommandsIndex === 0) return;
-        lastUsedCommandsIndex--;
-    }else if (e.key === "ArrowDown") {
-        if (lastUsedCommandsIndex == null) return;
-        inputNode.value = lastUsedCommands[lastUsedCommandsIndex];
+function navigateCommandHistory(direction, node, stop) {
+    if (lastUsedCommandsIndex == null) return;
 
-        if (checkValidCommand(inputNode.value?.trim())) inputNode.style.color = "#608ffc";
-        else inputNode.style.color = "white";
+    node.value = lastUsedCommands[lastUsedCommandsIndex];
 
-        if (lastUsedCommandsIndex === lastUsedCommands.length-1) return;
-        lastUsedCommandsIndex++;
-    }
+    if (checkValidCommand(node.value?.trim())) node.style.color = "#608ffc";
+    else node.style.color = "white";
+
+    if (lastUsedCommandsIndex === stop) return;
+    lastUsedCommandsIndex += direction;
 }
 
 function executeCommand(userCmd) {
