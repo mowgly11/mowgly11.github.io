@@ -1,3 +1,7 @@
 ### This Is My Portfolio Project :)
 
-https://osamabouzalim.me
+https://osamabouzalim.com
+
+#### Terminal version
+
+https://osamabouzalim.com/terminal
