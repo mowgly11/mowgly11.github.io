@@ -340,9 +340,8 @@ body {
     scale: 1.05;
 }
 
-.project:hover > .special-btn::before {
+.project:hover  {
     scale: 1.05;
-    animation: passingLine .5s ease-in-out;
 }
 
 .project-desc {
