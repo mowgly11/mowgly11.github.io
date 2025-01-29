@@ -75,6 +75,23 @@ body {
 .email,
 .status {
     transition: .3s;
+    position: relative;
+}
+
+#email {
+    position: relative;
+}
+
+#copied-text {
+    content: 'Copied!';
+    position: absolute;
+    transform: translate(-50%);
+    opacity: 0;
+    font-weight: 700;
+    transition: .5s;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .status {
