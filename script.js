@@ -1,3 +1,3 @@
 function takeToSite(site) {
-    location.href = site;
+    window.open(site);
 }
