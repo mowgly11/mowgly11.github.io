@@ -8,6 +8,16 @@
     scroll-behavior: smooth;
 }
 
+body::-webkit-scrollbar {
+    width: .7em;
+    background-color: #e6e6e6;
+}
+ 
+ 
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(98, 98, 98);
+}
+
 :root {
     --terminal-dark: #242424;
     --terminal-white: #f1f1f1;
