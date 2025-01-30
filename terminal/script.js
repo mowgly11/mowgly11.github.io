@@ -15,7 +15,7 @@ let lastUsedCommandsIndex;
 let currentDelay = 500;
 let currentAsciiDelay = 0;
 let isOnFullScreen = false;
-
+toggleFullscreen();
 document.getElementById("expand-dot").onclick = () => toggleFullscreen();
 document.getElementById("red-dot").onclick = () => window.close();
 document.getElementById("minimize-dot").onclick = () => location.href = "https://osamabouzalim.com";
