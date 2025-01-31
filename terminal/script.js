@@ -65,7 +65,7 @@ function executeCommand(userCmd) {
     const commandExists = possibleCommands.find(cmd => cmd.split("::")[0] === userCmd);
 
     if (userCmd === "clear") terminalBody.innerHTML = "";
-    else if (userCmd === "poweroff" || userCmd === "exit") window.close();
+    else if (userCmd === "poweroff" || userCmd === "exit") location.href = "https://osamabouzalim.com";
     else if (userCmd === "reboot") location.reload();
     else if (userCmd === "sudo rm -rf /") {
         let allInputs = document.querySelectorAll("input");

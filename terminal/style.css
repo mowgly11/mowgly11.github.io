@@ -92,7 +92,7 @@ body::-webkit-scrollbar-thumb {
 
 .terminal-body {
     padding: 20px;
-    padding-top: 60px;
+    padding-top: 100px;
 }
 
 .terminal-body-command {
