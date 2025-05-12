@@ -24,7 +24,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .terminal {
-    height: 80vh;
+    height: 80dvh;
     width: 85vw;
     position: absolute;
     left: 50%;
@@ -45,7 +45,7 @@ body::-webkit-scrollbar-thumb {
     border-top-right-radius: 14px;
     position: fixed;
     z-index: 5;
-    top: 10vh;
+    top: 10dvh;
     left: 7.5vw;
 }
 

@@ -15,7 +15,7 @@ let lastUsedCommandsIndex;
 let currentDelay = 500;
 let currentAsciiDelay = 0;
 let isOnFullScreen = false;
-toggleFullscreen();
+
 document.getElementById("expand-dot").onclick = () => toggleFullscreen();
 document.getElementById("red-dot").onclick = () => window.close();
 document.getElementById("minimize-dot").onclick = () => location.href = "https://osamabouzalim.com";
@@ -144,15 +144,15 @@ function toggleFullscreen() {
 
     const styles = isOnFullScreen
         ? {
-            terminalWindow: { height: '100vh', width: '100vw', borderRadius: '0' },
+            terminalWindow: { height: '100dvh', width: '100vw', borderRadius: '0' },
             terminalTop: { width: '100vw', top: '0', left: '0', borderRadius: '0' },
             versionTextColor: 'white',
         }
         : {
-            terminalWindow: { height: '80vh', width: '85vw', borderRadius: '15px' },
+            terminalWindow: { height: '80dvh', width: '85vw', borderRadius: '15px' },
             terminalTop: {
                 width: '85vw',
-                top: '10vh',
+                top: '10dvh',
                 left: '7.5vw',
                 borderTopLeftRadius: '14px',
                 borderTopRightRadius: '14px',
