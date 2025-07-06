@@ -10,6 +10,7 @@
   <meta property="og:url" content="http://osamabouzalim.com" />
   <link rel="icon" type="image/x-icon" href="./imgs/top-logo.webp" />
   <meta property="og:image" content="https://i.postimg.cc/6Qt5kSgz/top-logo.webp" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <meta property="og:description"
     content="Welcome to my portfolio! My name is Osama and I am an 18-year-old Full Stack Developer with a passion for creating innovative and user-friendly web applications. My skills include HTML, CSS, JavaScript, NodeJS and various frameworks and libraries. I have experience in both Front-End and Back-End development, which allows me to build dynamic and responsive websites that provide a seamless user experience.
   
@@ -21,7 +22,6 @@
   <script src="https://kit.fontawesome.com/f334197832.js" crossorigin="anonymous"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-MJD99TVLDM"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -33,15 +33,15 @@
 </head>
 
 <body>
-  <header class="heading">
+  <header class="heading" data-aos="fade-down">
     <div class="status nav-part">
       <a href="#status" id="status"></a>
     </div>
     <nav class="navigation nav-part">
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
-      <a href="#social">Social</a>
       <a href="#techs">Technologies</a>
+      <a href="#social">Social</a>
     </nav>
     <div class="email nav-part">
       <p id="copied-text">Copied!</p>
@@ -50,51 +50,77 @@
   </header>
   <main>
     <section class="landing-section">
-      <div style="text-align: center;"><h1>Osama Bouzalim</h1>
-        <h3>Software Developer</h3>
+      <div style="text-align: center;">
+        <h1 data-aos="fade-down">Oussama Bouzalim</h1>
+        <h3 data-aos="fade-down">Software Developer</h3>
         <div class="landing-btns">
-          <a class="special-btn" href="#about">About Me</a>
-          <a class="special-btn terminal" href="/terminal">Terminal</a>
-        </div></div>
-      <div class="folder">
+          <a class="special-btn" data-aos="fade-right" href="#about">About Me</a>
+          <a class="special-btn terminal" data-aos="fade-left" href="/terminal">Terminal</a>
+        </div>
+      </div>
+      <div class="folder" data-aos="fade-right">
         <div class="folder-close">
           <div class="folder-close-web">
-            <div class="files-text">My Files</div>
+            <div class="files-text">MY FILES</div>
           </div>
         </div>
-        <a href="#hobbies" id="ace" class="folder-card"><img draggable="false" src="./imgs/ace.webp"
+        <a href="#hobbies" id="ace" class="folder-card"><img draggable="false" width="300" src="./imgs/ace.png"
             alt="failed to load image" /></a>
-        <a href="#projects" class="folder-card" id="dev"><img draggable="false" src="./imgs/laptop.webp"
+        <a href="#projects" class="folder-card" id="dev"><img draggable="false" width="300" src="./imgs/laptop.png"
             alt="failed to load image" /></a>
-        <a href="#about" class="folder-card" id="info"><img draggable="false" width="300" src="./imgs/info.webp"
+        <a href="#about" class="folder-card" id="info"><img draggable="false" width="300" src="./imgs/info.png"
             alt="failed to load image" /></a>
       </div>
     </section>
     <section class="about-section" id="about">
-      <h1 class="section-title">About Me</h1>
-      <p>Hello! I'm Osama Bouzalim, a 19-year-old software developer driven by an insatiable curiosity and passion for
-        all things tech. My coding journey started with the desire to understand how software works under the hood, and
-        it has grown into a commitment to crafting efficient, meaningful digital experiences.
-        <br><br>
-        I specialize in front-end development using HTML, CSS, and JavaScript, focusing on creating visually appealing
-        and intuitive user interfaces. On the back-end, I leverage Node.js and Bun to build robust APIs and perform
-        intricate web scraping. I also use Python for scripting, automation, and data manipulation, taking advantage of
-        its powerful libraries to solve various challenges.
-        <br><br>
-        I'm currently learning more about Rust, exploring its capabilities for systems programming and high-performance
-        applications. Beyond coding, my hobbies include playing cards, reading books, and working out—activities that
-        help me unwind, stay inspired, and maintain a balanced lifestyle.
-        <br><br>
-        I speak Arabic, French, and English, allowing me to communicate and collaborate with a diverse range of people
-        and cultures.
-        <br><br>
-        Feel free to explore my work, and reach out if you'd like to collaborate or discuss a project. Let's build
-        something amazing together!
-      </p>
+      <h1 class="section-title" data-aos="fade-up">ABOUT ME</h1>
+      <div class="desc" data-aos="fade-down">
+        <p>Hello! I'm Oussama Bouzalim, a <span id="age"></span>-year-old software developer driven by an insatiable
+          curiosity and passion for
+          all things tech. My coding journey started with the desire to understand how software works under the hood,
+          and
+          it has grown into a commitment to crafting efficient, meaningful digital experiences.
+          <br><br>
+          I specialize in front-end development using HTML, CSS, and JavaScript, focusing on creating visually appealing
+          and intuitive user interfaces. On the back-end, I leverage Node.js and Bun to build robust APIs and perform
+          intricate web scraping. I also use Python for scripting, automation, and data manipulation, taking advantage
+          of
+          its powerful libraries to solve various challenges.
+          <br><br>
+          I'm currently learning more about Rust, exploring its capabilities for systems programming and
+          high-performance
+          applications. Beyond coding, my hobbies include playing cards, reading books, and working out—activities that
+          help me unwind, stay inspired, and maintain a balanced lifestyle.
+          <br><br>
+          I speak Arabic, French, and English, allowing me to communicate and collaborate with a diverse range of people
+          and cultures.
+          <br><br>
+          Feel free to explore my work, and reach out if you'd like to collaborate or discuss a project. Let's build
+          something amazing together!
+        </p>
+        <img draggable="false" width="300" src="./imgs/info.png" alt="failed to load image" id="book-about" />
+      </div>
+    </section>
+    <section class="hobbies" id="hobbies">
+      <h1 class="section-title" data-aos="fade-down">HOBBIES</h1>
+      <div class="hobbies-content">
+        <div class="hobbies-cards ace-container" data-aos="fade-right">
+          <img id="ace-animation" src="./imgs/ace.png" alt="ace" height="250" width="200">
+          <p>Cards</p>
+        </div>
+        <div class="hobbies-reading" data-aos="fade-right">
+          <img id="book-animation" src="./imgs/book-closed.png" alt="ace" height="250" width="200">
+          <p>Reading</p>
+        </div>
+        <div class="hobbies-sports" data-aos="fade-right">
+          <img id="runner-animation" src="./imgs/runner-frame1.png" height="250" width="200" alt="running">
+          <p>Running</p>
+        </div>
+      </div>
     </section>
     <section class="projects" id="projects">
-      <h1 class="section-title">Projects</h1>
-      <div class="projects-content">
+      <h1 class="section-title" data-aos="fade-down">PROJECTS</h1>
+      <div class="projects-content" data-aos="fade-right">
         <div class="project">
           <h3 class="project-title">Blog API</h3>
           <p class="project-desc">an open-source project that helps you run your own blog.</p>
@@ -116,42 +142,51 @@
       </div>
     </section>
     <section class="techs" id="techs">
-      <h1 class="section-title">Technologies</h1>
-      <h3>Languages</h3>
+      <h1 class="section-title" data-aos="fade-down">TECHNOLOGIES</h1>
+      <h3 data-aos="fade-right">Languages</h3>
       <div class="techs-content">
-        <div class="tech">HTML</div>
-        <div class="tech">CSS</div>
-        <div class="tech">JavaScript</div>
-        <div class="tech">TypeScript</div>
-        <div class="tech">C</div>
-        <div class="tech">Rust</div>
-        <div class="tech">Python</div>
+        <div class="tech" data-aos="fade-up" id="tech1">HTML</div>
+        <div class="tech" data-aos="fade-up" id="tech2">CSS</div>
+        <div class="tech" data-aos="fade-up" id="tech3">JavaScript</div>
+        <div class="tech" data-aos="fade-up" id="tech4">TypeScript</div>
+        <div class="tech" data-aos="fade-up" id="tech5">C</div>
+        <div class="tech" data-aos="fade-up" id="tech6">GO</div>
+        <div class="tech" data-aos="fade-up" id="tech7">Python</div>
       </div>
-      <h3>Frameworks & Other</h3>
+      <h3 data-aos="fade-right">Frameworks & Other</h3>
       <div class="techs-content">
-        <div class="tech">Git</div>
-        <div class="tech">NodeJS</div>
-        <div class="tech">Bun</div>
-        <div class="tech">MongoDB</div>
-        <div class="tech">Docker</div>
+        <div class="tech" data-aos="fade-down">Git</div>
+        <div class="tech" data-aos="fade-down">NodeJS</div>
+        <div class="tech" data-aos="fade-down">Bun</div>
+        <div class="tech" data-aos="fade-down">MongoDB</div>
+        <div class="tech" data-aos="fade-down">MySQL</div>
+        <div class="tech" data-aos="fade-down">Docker</div>
       </div>
     </section>
     <section class="social" id="social">
-      <h1 class="section-title">Social</h1>
+      <h1 class="section-title" data-aos="fade-down">SOCIAL</h1>
       <div class="social-content">
-        <a href="mailto:oussamabouzalim4@gmail.com" target="_blank"><img draggable="false" src="./imgs/gmail.webp"
-            alt="your browser doesn't support this image"></a>
-        <a href="https://www.instagram.com/oussama.bouzalim.1/" target="_blank"><img draggable="false"
-            src="./imgs/instagram.webp" alt="your browser doesn't support this image"></a>
-        <a href="https://www.fiverr.com/johnmarcusb" target="_blank"><img draggable="false" src="./imgs/fiverr.webp"
-            alt="your browser doesn't support this image"></a>
-        <a href="https://github.com/mowgly11" target="_blank"><img draggable="false" src="./imgs/github.webp"
-            alt="your browser doesn't support this image"></a>
-        <a href="https://www.linkedin.com/in/oussama-bouzalim-9410a8251/" target="_blank"><img draggable="false"
-            src="./imgs/linkedin.webp" alt="your browser doesn't support this image"></a>
+        <a data-aos="fade-up" href="mailto:oussamabouzalim4@gmail.com" target="_blank"><img draggable="false"
+            src="./imgs/gmail.png" alt="your browser doesn't support this image"></a>
+        <a data-aos="fade-up" href="https://www.instagram.com/oussama.bouzalim.1/" target="_blank"><img
+            draggable="false" src="./imgs/instagram.png" alt="your browser doesn't support this image"></a>
+        <a data-aos="fade-up" href="https://www.fiverr.com/johnmarcusb" target="_blank"><img draggable="false"
+            src="./imgs/fiverr.png" alt="your browser doesn't support this image"></a>
+        <a data-aos="fade-up" href="https://github.com/mowgly11" target="_blank"><img draggable="false"
+            src="./imgs/github.png" alt="your browser doesn't support this image"></a>
+        <a data-aos="fade-up" href="https://www.linkedin.com/in/oussama-bouzalim-9410a8251/" target="_blank"><img
+            draggable="false" src="./imgs/linkedin.png" alt="your browser doesn't support this image"></a>
       </div>
     </section>
   </main>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true,
+      duration: 600
+    });
+  </script>
 </body>
 
 <script src="./script.js"></script>
