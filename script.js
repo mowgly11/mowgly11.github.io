@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", async () => {
-    // Fetch availability status from config
     const data = await fetch("./config.json").then(res => res.json());
     let root = document.querySelector(':root');
     let availableText = document.getElementById("status");
@@ -12,7 +11,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         availableText.textContent = "On Vacation";
     }
 
-    // Preload images for animation
     function preloadImages(imageArray) {
         imageArray.forEach(src => {
             const img = new Image();
@@ -36,7 +34,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     preloadImages(runnerImgs);
     preloadImages(bookImgs);
 
-    // Runner animation
     const runnerImg = document.getElementById("runner-animation");
     let runnerInterval;
 
@@ -51,10 +48,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     runnerImg.onmouseleave = function () {
         clearInterval(runnerInterval);
-        runnerImg.setAttribute("src", runnerImgs[0]); // Reset to first frame
+        runnerImg.setAttribute("src", runnerImgs[0]); 
     };
 
-    // Book animation
     const bookImg = document.getElementById("book-animation");
 
     bookImg.onmouseenter = async function () {
@@ -69,16 +65,13 @@ document.addEventListener("DOMContentLoaded", async () => {
         bookImg.setAttribute("src", "./imgs/book-closed.png");
     };
 
-    // Set dynamic age
     document.getElementById("age").textContent = new Date().getFullYear() - 2005;
 });
 
-// External site redirection
 function takeToSite(site) {
     window.open(site);
 }
 
-// Copy email with cooldown effect
 let cooldown = false;
 let emailElement = document.getElementById("email");
 let copiedText = document.getElementById("copied-text");
