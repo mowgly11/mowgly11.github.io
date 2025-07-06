@@ -386,8 +386,32 @@ body::-webkit-scrollbar-thumb {
     }
 }
 
+.ace-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.ace-container::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150px;
+    width: 50px;
+    height: 250px;
+    background: white;
+    box-shadow: 1px 1px 15px white;
+    opacity: .5;
+    transform: rotate(20deg);
+    transition: .6s;
+    z-index: 55;
+}
+
+.ace-container:hover::before {
+    transform: translateX(400px);
+}
+
 .ace-container:hover > img {
-    animation: spin 1.7s infinite linear;
+    animation: spin 1.7s infinite linear .3s;
 }
 
 .projects {
@@ -415,7 +439,6 @@ body::-webkit-scrollbar-thumb {
 
 .project {
     border: 4px solid rgb(98, 98, 98);
-    max-width: 500px;
     width: 400px;
     height: 300px;
     margin: 15px;
@@ -555,16 +578,30 @@ body::-webkit-scrollbar-thumb {
     }
 
     .project {
-        width: 360px;
+        width: 300px;
         height: 270px;
     }
 
+    .project-title {
+        font-size: 1.9em;
+    }
+
+    .project-desc {
+        font-size: 20px;
+    }
     #book-about {
         display: none;
     }
 }
 
 @media screen and (max-width: 900px) {
+    .landing-section h1 {
+        font-size: 4em;
+    }
+    .landing-section h3 {
+        font-size: 1.8em;
+    }
+
     .folder, .folder-close {
         width: 350px;
     }
@@ -602,16 +639,12 @@ body::-webkit-scrollbar-thumb {
         font-size: 17px;
     }
 
-    .project-title {
-        font-size: 1.9em;
-    }
-
-    .project-desc {
-        font-size: 20px;
+    .section-title {
+        font-size: 3em;
     }
 }
 
-@media screen and (max-height: 765px) {
+@media screen and (max-height: 900px) {
     .folder {
         display: none;
     }

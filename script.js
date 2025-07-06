@@ -19,16 +19,16 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     const runnerImgs = [
-        "./imgs/runner-frame3.png",
-        "./imgs/runner-frame2.png",
-        "./imgs/runner-frame4.png",
-        "./imgs/runner-frame1.png",
+        "./imgs/runner-frame3.webp",
+        "./imgs/runner-frame2.webp",
+        "./imgs/runner-frame4.webp",
+        "./imgs/runner-frame1.webp",
     ];
 
     const bookImgs = [
-        "./imgs/book-half.png",
-        "./imgs/book-open.png",
-        "./imgs/book-closed.png"
+        "./imgs/book-half.webp",
+        "./imgs/book-open.webp",
+        "./imgs/book-closed.webp"
     ];
 
     preloadImages(runnerImgs);
@@ -54,15 +54,15 @@ document.addEventListener("DOMContentLoaded", async () => {
     const bookImg = document.getElementById("book-animation");
 
     bookImg.onmouseenter = async function () {
-        bookImg.setAttribute("src", "./imgs/book-half.png");
+        bookImg.setAttribute("src", "./imgs/book-half.webp");
         await new Promise(res => setTimeout(res, 300));
-        bookImg.setAttribute("src", "./imgs/book-open.png");
+        bookImg.setAttribute("src", "./imgs/book-open.webp");
     };
 
     bookImg.onmouseleave = async function () {
-        bookImg.setAttribute("src", "./imgs/book-half.png");
+        bookImg.setAttribute("src", "./imgs/book-half.webp");
         await new Promise(res => setTimeout(res, 300));
-        bookImg.setAttribute("src", "./imgs/book-closed.png");
+        bookImg.setAttribute("src", "./imgs/book-closed.webp");
     };
 
     document.getElementById("age").textContent = new Date().getFullYear() - 2005;
