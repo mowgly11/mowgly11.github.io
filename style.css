@@ -603,15 +603,15 @@ body::-webkit-scrollbar-thumb {
     }
 
     .folder, .folder-close {
-        width: 350px;
+        width: 380px;
     }
 
     .folder {
-        height: 250px;
+        height: 200px;
     }
 
     .folder-close {
-        height: 250px;
+        height: 200px;
     }
 
     .folder img {
@@ -624,7 +624,7 @@ body::-webkit-scrollbar-thumb {
 
     .folder-close-web {
         width: 300px;
-        height: 200px;
+        height: 150px;
     }
 
     .files-text {
@@ -644,7 +644,12 @@ body::-webkit-scrollbar-thumb {
     }
 }
 
-@media screen and (max-height: 900px) {
+@media screen and (max-height: 750px) {
+    .folder {
+        display: none;
+    }
+}
+@media screen and (max-width: 389px) {
     .folder {
         display: none;
     }
