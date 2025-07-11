@@ -33,11 +33,14 @@ function handleEnterKey(e, inputNode) {
     if (e.key === "Enter") {
         inputNode.setAttribute("disabled", true);
 
-        var cmd = inputNode.value?.trim().replace(/[<>]/g, "");
+        var cmd = inputNode.value?.trim();
         lastUsedCommands.push(cmd);
 
         lastUsedCommandsIndex = lastUsedCommands.length - 1
 
+        let htmlTagRegex = /<\s*\/?\s*[a-zA-Z]+[^>]*>/g;
+        if(typeof cmd === "string" && htmlTagRegex.test(cmd)) location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley';
+        
         executeCommand(cmd);
 
         addNewTerminalLine();
@@ -105,7 +108,8 @@ function executeCommand(userCmd) {
     } else if (userCmd.startsWith("echo")) {
         let echoing = userCmd.split(" ");
         echoing.shift();
-        terminalOutput.querySelector(".terminal-text").innerHTML = echoing.join(" ");
+        let result = echoing.join(" ");
+        terminalOutput.querySelector(".terminal-text").textContent = result;
     } else if (commandExists != null) {
         let commandResponse = commandExists.split("::")[1];
         terminalOutput.querySelector(".terminal-text").innerHTML = commandResponse;
