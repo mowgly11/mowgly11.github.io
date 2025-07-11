@@ -16,11 +16,62 @@ document.addEventListener("DOMContentLoaded", async () => {
         availableText.textContent = "On Vacation";
     }
 
+    document.body.style.pointerEvents = 'none';
+    document.body.style.opacity = '0.5';
+    
+    const loadingIndicator = document.createElement('div');
+    loadingIndicator.id = 'loading-indicator';
+    loadingIndicator.textContent = 'Loading assets...';
+    loadingIndicator.style.position = 'fixed';
+    loadingIndicator.style.top = '50%';
+    loadingIndicator.style.left = '50%';
+    loadingIndicator.style.transform = 'translate(-50%, -50%)';
+    loadingIndicator.style.zIndex = '9999';
+    loadingIndicator.style.background = 'rgba(0, 0, 0, 0.8)';
+    loadingIndicator.style.color = 'white';
+    loadingIndicator.style.padding = '20px';
+    loadingIndicator.style.borderRadius = '10px';
+    loadingIndicator.style.fontSize = '18px';
+    document.body.appendChild(loadingIndicator);
+
+    const preloadedImages = {};
+    const preloadedImageElements = {};
+
     function preloadImages(imageArray) {
-        imageArray.forEach(src => {
-            const img = new Image();
-            img.src = src;
+        return Promise.all(imageArray.map(src => {
+            return new Promise((resolve, reject) => {
+                const img = new Image();
+                img.onload = () => {
+                    preloadedImages[src] = img.src;
+                    preloadedImageElements[src] = img;
+                    resolve();
+                };
+                img.onerror = reject;
+                img.src = src;
+            });
+        }));
+    }
+
+    function preloadAudio(audioSrc) {
+        return new Promise((resolve, reject) => {
+            if (!audioSrc) {
+                resolve();
+                return;
+            }
+            const audioElement = new Audio();
+            audioElement.oncanplaythrough = resolve;
+            audioElement.onerror = reject;
+            audioElement.src = audioSrc;
+            audioElement.load();
         });
+    }
+
+    function setImageSrc(element, src) {
+        if (preloadedImages[src]) {
+            element.src = preloadedImages[src];
+        } else {
+            element.src = src;
+        }
     }
 
     const runnerImgs = [
@@ -36,6 +87,11 @@ document.addEventListener("DOMContentLoaded", async () => {
         "./imgs/book-closed.webp"
     ];
 
+    const faceImgs = [
+        "./imgs/face.webp",
+        "./imgs/face-talking.webp"
+    ];
+
     const ttsLines = [
         "Osama: Hi! I'm Oussama Bouzalim, a 20-year-old software developer passionate about",
         "tech and problem-solving. I specialize in front-end development with HTML,",
@@ -43,11 +99,28 @@ document.addEventListener("DOMContentLoaded", async () => {
         "Bun, and Python I'm also exploring Rust for high-performance applications.",
         "Outside of coding, I enjoy playing cards, reading, and working out.",
         "I speak Arabic, French, and English, and love collaborating with people from different",
-        " backgrounds. Feel free to check out my work or reach out—let’s build something great!",
+        " backgrounds. Feel free to check out my work or reach out—let's build something great!",
     ];
 
-    preloadImages(runnerImgs);
-    preloadImages(bookImgs);
+    try {
+        await Promise.all([
+            preloadImages(runnerImgs),
+            preloadImages(bookImgs), 
+            preloadImages(faceImgs),
+            preloadAudio(audio ? audio.src : null)
+        ]);
+        
+        if (loadingIndicator && loadingIndicator.parentNode) {
+            document.body.removeChild(loadingIndicator);
+        }
+        document.body.style.pointerEvents = 'auto';
+        document.body.style.opacity = '1';
+    } catch (error) {
+        if (loadingIndicator) {
+            loadingIndicator.textContent = 'Error loading assets. Please refresh the page.';
+            loadingIndicator.style.background = 'rgba(255, 0, 0, 0.8)';
+        }
+    }
 
     const runnerImg = document.getElementById("runner-animation");
     let runnerInterval;
@@ -56,28 +129,28 @@ document.addEventListener("DOMContentLoaded", async () => {
         let i = 0;
         runnerInterval = setInterval(() => {
             if (i === runnerImgs.length) i = 0;
-            runnerImg.setAttribute("src", runnerImgs[i]);
+            setImageSrc(runnerImg, runnerImgs[i]);
             i++;
         }, 300);
     };
 
     runnerImg.onmouseleave = function () {
         clearInterval(runnerInterval);
-        runnerImg.setAttribute("src", runnerImgs[0]);
+        setImageSrc(runnerImg, runnerImgs[0]);
     };
 
     const bookImg = document.getElementById("book-animation");
 
     bookImg.onmouseenter = async function () {
-        bookImg.setAttribute("src", "./imgs/book-half.webp");
+        setImageSrc(bookImg, "./imgs/book-half.webp");
         await new Promise(res => setTimeout(res, 300));
-        bookImg.setAttribute("src", "./imgs/book-open.webp");
+        setImageSrc(bookImg, "./imgs/book-open.webp");
     };
 
     bookImg.onmouseleave = async function () {
-        bookImg.setAttribute("src", "./imgs/book-half.webp");
+        setImageSrc(bookImg, "./imgs/book-half.webp");
         await new Promise(res => setTimeout(res, 300));
-        bookImg.setAttribute("src", "./imgs/book-closed.webp");
+        setImageSrc(bookImg, "./imgs/book-closed.webp");
     };
 
     document.getElementById("age").textContent = new Date().getFullYear() - 2005;
@@ -131,9 +204,9 @@ document.addEventListener("DOMContentLoaded", async () => {
             let mouthOpen = false;
             mouthInterval = setInterval(() => {
                 if (mouthOpen) {
-                    face.setAttribute('src', 'imgs/face-talking.webp');
+                    setImageSrc(face, './imgs/face-talking.webp');
                 } else {
-                    face.setAttribute('src', 'imgs/face.webp');
+                    setImageSrc(face, './imgs/face.webp');
                 }
                 mouthOpen = !mouthOpen;
             }, 300);
@@ -154,7 +227,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             audio.currentTime = 0;
             clearInterval(mouthInterval);
             clearInterval(dialogueInterval);
-            face.setAttribute('src', 'imgs/face.webp');
+            setImageSrc(face, './imgs/face.webp');
         }
     }
     function startTalking() {
@@ -166,7 +239,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                     playBtn.style.backgroundColor = "rgb(255, 204, 37)";
                     face.style.scale = 1;
                     if(mouthInterval) clearInterval(mouthInterval);
-                    face.setAttribute('src', 'imgs/face.webp');
+                    setImageSrc(face, './imgs/face.webp');
                     dialogue.style.zIndex = -1;
                     dialogue.style.opacity = 0;
                 }, 5000);
