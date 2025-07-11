@@ -12,7 +12,7 @@
   <meta property="og:image" content="https://i.postimg.cc/6Qt5kSgz/top-logo.webp" />
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <meta property="og:description"
-    content="Welcome to my portfolio! My name is Osama and I am an 18-year-old Full Stack Developer with a passion for creating innovative and user-friendly web applications. My skills include HTML, CSS, JavaScript, NodeJS and various frameworks and libraries. I have experience in both Front-End and Back-End development, which allows me to build dynamic and responsive websites that provide a seamless user experience.
+    content="Welcome to my portfolio! My name is Osama and I am an 20-year-old Full Stack Developer with a passion for creating innovative and user-friendly web applications. My skills include HTML, CSS, JavaScript, NodeJS and various frameworks and libraries. I have experience in both Front-End and Back-End development, which allows me to build dynamic and responsive websites that provide a seamless user experience.
   
   In addition to my technical skills, I also have experience working with Adobe Photoshop. I have been using this software for several years, and have developed a strong understanding of its features and capabilities. I am able to create visually appealing designs and graphics that enhance the overall look and feel of a website. I also have experience in photo editing, creating logos, and other graphics work.
   
@@ -31,7 +31,12 @@
     gtag('config', 'G-MJD99TVLDM');
   </script>
 </head>
-
+<audio src="./tts.mp3" id="tts"></audio>
+<img src="./imgs/face.webp" class="face" alt="face" id="face" data-aos="fade-down" draggable="false">
+<p id="assistance">Need Assistance?</p>
+<div id="dialogue">
+  <p id="dialogue-text"></p>
+</div>
 <body>
   <header class="heading" data-aos="fade-down">
     <div class="status nav-part">
@@ -74,29 +79,17 @@
     </section>
     <section class="about-section" id="about">
       <h1 class="section-title" data-aos="fade-up">ABOUT ME</h1>
-      <div class="desc" data-aos="fade-down">
-        <p>Hello! I'm Oussama Bouzalim, a <span id="age"></span>-year-old software developer driven by an insatiable
-          curiosity and passion for
-          all things tech. My coding journey started with the desire to understand how software works under the hood,
-          and
-          it has grown into a commitment to crafting efficient, meaningful digital experiences.
+      <div class="desc" data-aos="fade-down" id="about-me">
+        <p>
+          <button class="special-btn" id="play-btn" href="#play">Play</button>Hi! I'm Oussama Bouzalim, a <span id="age"></span>-year-old software developer passionate about tech and problem-solving.
           <br><br>
-          I specialize in front-end development using HTML, CSS, and JavaScript, focusing on creating visually appealing
-          and intuitive user interfaces. On the back-end, I leverage Node.js and Bun to build robust APIs and perform
-          intricate web scraping. I also use Python for scripting, automation, and data manipulation, taking advantage
-          of
-          its powerful libraries to solve various challenges.
+          I specialize in front-end development with HTML, CSS, and JavaScript, and build back-end systems using Node.js, Bun, and Python. I'm also exploring Rust for high-performance applications.
           <br><br>
-          I'm currently learning more about Rust, exploring its capabilities for systems programming and
-          high-performance
-          applications. Beyond coding, my hobbies include playing cards, reading books, and working out—activities that
-          help me unwind, stay inspired, and maintain a balanced lifestyle.
+          Outside of coding, I enjoy playing cards, reading, and working out.
           <br><br>
-          I speak Arabic, French, and English, allowing me to communicate and collaborate with a diverse range of people
-          and cultures.
+          I speak Arabic, French, and English, and love collaborating with people from different backgrounds.
           <br><br>
-          Feel free to explore my work, and reach out if you'd like to collaborate or discuss a project. Let's build
-          something amazing together!
+          Feel free to check out my work or reach out—let’s build something great!
         </p>
         <img draggable="false" width="300" src="./imgs/info.webp" alt="failed to load image" id="book-about" />
       </div>
