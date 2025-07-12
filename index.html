@@ -8,7 +8,7 @@
   <meta property="og:title" content="OsamaBozalim" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="http://osamabouzalim.com" />
-  <link rel="icon" type="image/x-icon" href="./imgs/top-logo.webp" />
+  <link rel="icon" type="image/x-icon" href="./imgs/face.webp" />
   <meta property="og:image" content="https://i.postimg.cc/6Qt5kSgz/top-logo.webp" />
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <meta property="og:description"
@@ -31,13 +31,19 @@
     gtag('config', 'G-MJD99TVLDM');
   </script>
 </head>
-<audio src="./tts.mp3" id="tts"></audio>
-<img src="./imgs/face.webp" class="face" alt="face" id="face" data-aos="fade-down" draggable="false">
-<p id="assistance">Need Assistance?</p>
-<div id="dialogue">
-  <p id="dialogue-text"></p>
-</div>
 <body>
+  <audio src="./tts.mp3" id="tts"></audio>
+  <img src="./imgs/face.webp" class="face" alt="face" id="face" data-aos="fade-down" draggable="false">
+  <p id="assistance">Need Assistance?</p>
+  <div class="face-container" id="face-container"></div>
+  <div id="dialogue">
+    <p id="dialogue-text"></p>
+  </div>
+  <div class="email nav-part">
+    <p id="copied-text">Copied!</p>
+    <a id="email" href="#copyEmail" onclick="copyEmail()">oussamabouzalim4@gmail.com</a>
+  </div>
+
   <header class="heading" data-aos="fade-down">
     <div class="status nav-part">
       <a href="#status" id="status"></a>
@@ -48,10 +54,6 @@
       <a href="#techs">Technologies</a>
       <a href="#social">Social</a>
     </nav>
-    <div class="email nav-part">
-      <p id="copied-text">Copied!</p>
-      <a id="email" href="#copyEmail" onclick="copyEmail()">oussamabouzalim4@gmail.com</a>
-    </div>
   </header>
   <main>
     <section class="landing-section">
