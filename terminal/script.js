@@ -17,7 +17,7 @@ let currentAsciiDelay = 0;
 let isOnFullScreen = false;
 
 document.getElementById("expand-dot").onclick = () => toggleFullscreen();
-document.getElementById("red-dot").onclick = () => window.close();
+document.getElementById("red-dot").onclick = () => location.href = "https://osamabouzalim.com";
 document.getElementById("minimize-dot").onclick = () => location.href = "https://osamabouzalim.com";
 
 windowResolution.textContent = `${terminalWindow.clientWidth} x ${terminalWindow.clientHeight}`;
