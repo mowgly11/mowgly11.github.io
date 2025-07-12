@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     let dialogue = document.getElementById("dialogue");
     let dialogueText = document.getElementById("dialogue-text");
     let audio = document.getElementById("tts");
+    let faceContainer = document.getElementById("face-container");
+    let assistanceText = document.getElementById("assistance");
 
     if (data.available) {
         root.style.setProperty("--availability", 'green');
@@ -18,7 +20,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     document.body.style.pointerEvents = 'none';
     document.body.style.opacity = '0.5';
-    
+
     const loadingIndicator = document.createElement('div');
     loadingIndicator.id = 'loading-indicator';
     loadingIndicator.textContent = 'Loading assets...';
@@ -105,11 +107,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     try {
         await Promise.all([
             preloadImages(runnerImgs),
-            preloadImages(bookImgs), 
+            preloadImages(bookImgs),
             preloadImages(faceImgs),
             preloadAudio(audio ? audio.src : null)
         ]);
-        
+
         if (loadingIndicator && loadingIndicator.parentNode) {
             document.body.removeChild(loadingIndicator);
         }
@@ -154,38 +156,57 @@ document.addEventListener("DOMContentLoaded", async () => {
     };
 
     document.getElementById("age").textContent = new Date().getFullYear() - 2005;
-
+    let oldPos = parseFloat(getComputedStyle(face).left.replace('px', '')) * 100 / window.innerWidth;
+    
     face.addEventListener("click", () => {
         playBtn.style.display = "block";
-        document.getElementById("assistance").style.display = "none";
-        document.body.addEventListener("mousemove", (e) => {
-            let x = e.pageX;
-            let y = e.pageY;
-            face.style.position = "absolute";
-            face.style.width = "50px";
-            face.style.height = "60px";
-            face.animate({
-                left: `${x + 50}px`,
-                top: `${y + 30}px`
-            }, { duration: 500, fill: "forwards" });
+        assistanceText.style.opacity = 0;
+        faceContainer.style.opacity = .3;
+        document.body.addEventListener("mousemove", followMouse);
 
-            if (x > window.innerWidth - 100) {
-                face.animate({
-                    left: `${x - 50}px`,
-                    top: `${y + 30}px`
-                }, { duration: 150, fill: "forwards" });
-            }
-        });
+        document.body.addEventListener('mouseleave', mouseLeavesPage);
 
-        document.body.addEventListener('mouseleave', () => {
+        faceContainer.addEventListener("click", (e) => {
+            faceContainer.style.opacity = 1;
+            assistanceText.style.opacity = 1;
+            playBtn.style.display = "none";
+            document.body.removeEventListener('mousemove', followMouse);
+            document.body.removeEventListener('mouseleave', mouseLeavesPage);
+            face.removeAttribute('style')
             face.animate({
-                left: `50%`,
-                top: `25%`
+                top: '20px',
+                left: `${oldPos+.5}%`
             }, { duration: 700, fill: "forwards" });
-            face.removeAttribute("style");
-            face.style.position = "absolute";
         });
-    })
+    });
+
+    function followMouse(e) {
+        let x = e.pageX;
+        let y = e.pageY;
+        face.style.position = "absolute";
+        face.style.width = "50px";
+        face.style.height = "60px";
+        face.animate({
+            left: `${x + 50}px`,
+            top: `${y + 30}px`
+        }, { duration: 500, fill: "forwards" });
+
+        if (x > window.innerWidth - 100) {
+            face.animate({
+                left: `${x - 50}px`,
+                top: `${y + 30}px`
+            }, { duration: 150, fill: "forwards" });
+        }
+    }
+
+    function mouseLeavesPage(e) {
+        face.animate({
+            left: `50%`,
+            top: `25%`
+        }, { duration: 700, fill: "forwards" });
+        face.removeAttribute("style");
+        face.style.position = "absolute";
+    }
 
 
     let mouthInterval = null;
@@ -238,7 +259,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                     playBtn.textContent = "Replay";
                     playBtn.style.backgroundColor = "rgb(255, 204, 37)";
                     face.style.scale = 1;
-                    if(mouthInterval) clearInterval(mouthInterval);
+                    if (mouthInterval) clearInterval(mouthInterval);
                     setImageSrc(face, './imgs/face.webp');
                     dialogue.style.zIndex = -1;
                     dialogue.style.opacity = 0;
