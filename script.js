@@ -172,7 +172,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             playBtn.style.display = "none";
             document.body.removeEventListener('mousemove', followMouse);
             document.body.removeEventListener('mouseleave', mouseLeavesPage);
-            face.removeAttribute('style')
+            face.removeAttribute('style');
             face.animate({
                 top: '20px',
                 left: `${oldPos+.5}%`
