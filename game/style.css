@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: "Pixelify Sans", sans-serif;
+}
+
+body {
+    background-image: url(./assets/grass.webp);
+    background-size: cover;
+}
+
+.road {
+    position: absolute;
+}
+
+#road1 {
+    width: 150px;
+    height: 100%;
+    outline: #5c210d 1px solid;
+    background-image: url(./assets/grass2.webp);
+    background-size: contain;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 99;
+}
