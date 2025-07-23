@@ -424,6 +424,7 @@ body::-webkit-scrollbar-thumb {
 .blog-full-content {
     color: #242424;
     font-size: 1.1em;
+    font-family: 'Ubuntu', sans-serif;
     white-space: pre-wrap;
     word-wrap: break-word;
 }
@@ -604,6 +605,7 @@ body::-webkit-scrollbar-thumb {
     
     .blog-full-content {
         font-size: 1.05em;
+        font-family: 'Ubuntu', sans-serif;
         line-height: 1.7;
     }
     
@@ -735,6 +737,7 @@ body::-webkit-scrollbar-thumb {
     
     .blog-full-content {
         font-size: 1em;
+        font-family: 'Ubuntu', sans-serif;
         line-height: 1.6;
     }
 }
@@ -784,6 +787,7 @@ body::-webkit-scrollbar-thumb {
     
     .blog-full-content {
         font-size: 0.95em;
+        font-family: 'Ubuntu', sans-serif;
     }
 }
 
