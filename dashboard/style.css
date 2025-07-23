@@ -358,23 +358,119 @@ body::-webkit-scrollbar-thumb {
 
 /* Larger editor in modals */
 .modal .quill-editor {
-    min-height: 300px;
+    min-height: 500px;
+    position: relative;
 }
 
 .modal .quill-editor .ql-container {
-    min-height: 250px;
+    min-height: 450px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+/* Sticky toolbar for modal editing - NOW PROPERLY AT TOP */
+.modal .quill-editor .ql-toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 15;
+    background-color: #f8f9fa;
+    border-bottom: 2px solid rgb(98, 98, 98);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 0;
+    border-radius: 8px 8px 0 0;
+}
+
+/* Ensure content area has enough space */
+.modal .quill-editor .ql-container {
+    border-radius: 0 0 8px 8px;
+    background-color: white;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+/* Adjust form group spacing in modals */
+.modal .form-group {
+    margin-bottom: 30px;
+}
+
+/* Make editor content area more spacious with Ubuntu font */
+.modal .quill-editor .ql-editor {
+    padding: 20px;
+    line-height: 1.8;
+    font-size: 1.1em;
+    min-height: 400px;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 .quill-editor .ql-editor {
     padding: 15px;
     color: #242424;
     line-height: 1.6;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 .quill-editor .ql-editor::before {
     color: rgb(98, 98, 98);
     font-style: italic;
     font-weight: normal;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+/* Quill Custom Font Classes */
+.ql-font-ubuntu {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.ql-font-pixelify {
+    font-family: 'Pixelify Sans', sans-serif;
+}
+
+.ql-font-courier {
+    font-family: 'Courier New', monospace;
+}
+
+.ql-font-monospace {
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+}
+
+/* Apply fonts in Quill editor content */
+.quill-editor .ql-editor .ql-font-ubuntu {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.quill-editor .ql-editor .ql-font-pixelify {
+    font-family: 'Pixelify Sans', sans-serif;
+}
+
+.quill-editor .ql-editor .ql-font-courier {
+    font-family: 'Courier New', monospace;
+}
+
+.quill-editor .ql-editor .ql-font-monospace {
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+}
+
+/* Ensure toolbar font selector shows correct fonts */
+.quill-editor .ql-picker.ql-font .ql-picker-label[data-value="ubuntu"]::before,
+.quill-editor .ql-picker.ql-font .ql-picker-item[data-value="ubuntu"]::before {
+    content: "Ubuntu";
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.quill-editor .ql-picker.ql-font .ql-picker-label[data-value="pixelify"]::before,
+.quill-editor .ql-picker.ql-font .ql-picker-item[data-value="pixelify"]::before {
+    content: "Pixelify Sans";
+    font-family: 'Pixelify Sans', sans-serif;
+}
+
+.quill-editor .ql-picker.ql-font .ql-picker-label[data-value="courier"]::before,
+.quill-editor .ql-picker.ql-font .ql-picker-item[data-value="courier"]::before {
+    content: "Courier";
+    font-family: 'Courier New', monospace;
+}
+
+.quill-editor .ql-picker.ql-font .ql-picker-label[data-value="monospace"]::before,
+.quill-editor .ql-picker.ql-font .ql-picker-item[data-value="monospace"]::before {
+    content: "Monospace";
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
 }
 
 .quill-editor .ql-toolbar .ql-stroke {
@@ -583,13 +679,14 @@ body::-webkit-scrollbar-thumb {
     border: 4px solid rgb(98, 98, 98);
     border-radius: 15px;
     padding: 30px;
-    max-width: 900px;
-    width: 95%;
-    max-height: 95vh;
+    max-width: 1200px;
+    width: 98%;
+    max-height: 98vh;
     overflow-y: auto;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
     transform: scale(0.8);
     transition: transform 0.3s ease;
+    position: relative;
 }
 
 .modal.active .modal-content {
@@ -729,10 +826,20 @@ body::-webkit-scrollbar-thumb {
     }
     
     .modal-content {
-        width: 98%;
+        width: 99%;
         max-width: none;
         padding: 20px;
-        margin: 10px;
+        margin: 5px;
+        max-height: 99vh;
+    }
+    
+    .modal-header {
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+    }
+    
+    .modal .quill-editor .ql-toolbar {
+        top: 0;
     }
     
     .toast-container {
@@ -789,13 +896,34 @@ body::-webkit-scrollbar-thumb {
         max-height: 100vh;
         border-radius: 0;
         margin: 0;
+        padding: 15px;
+    }
+    
+    .modal-header {
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        font-size: 0.9em;
+    }
+    
+    .modal-header h3 {
+        font-size: 1.5em;
     }
     
     .modal .quill-editor {
-        min-height: 250px;
+        min-height: 400px;
     }
     
     .modal .quill-editor .ql-container {
-        min-height: 200px;
+        min-height: 350px;
+    }
+    
+    .modal .quill-editor .ql-toolbar {
+        top: 0;
+        padding: 8px;
+    }
+    
+    .modal .quill-editor .ql-editor {
+        padding: 15px;
+        min-height: 300px;
     }
 }
