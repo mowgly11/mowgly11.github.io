@@ -363,6 +363,7 @@ body::-webkit-scrollbar-thumb {
     left: 15px;
     top: 150px;
     transition: .3s;
+    cursor: pointer;
 }
 
 .about-section h1 {
@@ -721,6 +722,10 @@ body::-webkit-scrollbar-thumb {
 
     .section-title {
         font-size: 3em;
+    }
+
+    .email {
+        display: none;
     }
 }
 
