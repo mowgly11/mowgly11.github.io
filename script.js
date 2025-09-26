@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", async () => {
     const data = await fetch("./config.json").then(res => res.json());
+
     let root = document.querySelector(':root');
     let availableText = document.getElementById("status");
     let face = document.getElementById("face");
@@ -9,6 +10,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     let audio = document.getElementById("tts");
     let faceContainer = document.getElementById("face-container");
     let assistanceText = document.getElementById("assistance");
+    let bookAbout = document.getElementById("book-about");
 
     if (data.available) {
         root.style.setProperty("--availability", 'green');
@@ -157,11 +159,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     document.getElementById("age").textContent = new Date().getFullYear() - 2005;
     let oldPos = parseFloat(getComputedStyle(face).left.replace('px', '')) * 100 / window.innerWidth;
-    
+
     face.addEventListener("click", () => {
         playBtn.style.display = "block";
-        assistanceText.style.opacity = 0;
         faceContainer.style.opacity = .3;
+        assistanceText.style.opacity = 0;
         document.body.addEventListener("mousemove", followMouse);
 
         document.body.addEventListener('mouseleave', mouseLeavesPage);
@@ -175,7 +177,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             face.removeAttribute('style');
             face.animate({
                 top: '20px',
-                left: `${oldPos+.5}%`
+                left: `${oldPos + .5}%`
             }, { duration: 700, fill: "forwards" });
         });
     });
@@ -195,6 +197,12 @@ document.addEventListener("DOMContentLoaded", async () => {
             face.animate({
                 left: `${x - 50}px`,
                 top: `${y + 30}px`
+            }, { duration: 150, fill: "forwards" });
+        }
+
+        if (y > document.documentElement.scrollHeight - 100) {
+            face.animate({
+                top: `${y - 80}px`
             }, { duration: 150, fill: "forwards" });
         }
     }
@@ -251,6 +259,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             setImageSrc(face, './imgs/face.webp');
         }
     }
+
     function startTalking() {
         dialogueInterval = setInterval(() => {
             if (currentLineIndex === ttsLines.length - 1) {
