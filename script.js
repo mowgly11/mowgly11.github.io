@@ -163,14 +163,14 @@ document.addEventListener("DOMContentLoaded", async () => {
     face.addEventListener("click", () => {
         playBtn.style.display = "block";
         faceContainer.style.opacity = .3;
-        assistanceText.style.opacity = 0;
+        assistanceText.textContent = "Put me back here!!";
         document.body.addEventListener("mousemove", followMouse);
 
         document.body.addEventListener('mouseleave', mouseLeavesPage);
 
         faceContainer.addEventListener("click", (e) => {
             faceContainer.style.opacity = 1;
-            assistanceText.style.opacity = 1;
+            assistanceText.textContent = "Need Assistance?";
             playBtn.style.display = "none";
             document.body.removeEventListener('mousemove', followMouse);
             document.body.removeEventListener('mouseleave', mouseLeavesPage);
