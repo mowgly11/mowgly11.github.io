@@ -599,7 +599,20 @@ body::-webkit-scrollbar-thumb {
     flex-wrap: wrap;
 }
 
+.tech-box {
+    position: relative;
+}
+
+.tech-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: .3s;
+}
+
 .tech {
+    position: relative;
     font-size: 1.8em;
     background-color: #e6e6e6;
     padding: 5px 15px;
@@ -608,6 +621,12 @@ body::-webkit-scrollbar-thumb {
     color: rgb(98, 98, 98);
     border: 3px solid rgb(98, 98, 98);
     box-shadow: 0 3px 5px rgb(0, 0, 0, .2);
+    cursor: pointer;
+    z-index: 99;
+}
+
+.tech:hover+.tech-img {
+    transform: translate(-25px, -75px);
 }
 
 .social {
