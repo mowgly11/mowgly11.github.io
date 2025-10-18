@@ -31,10 +31,19 @@
     gtag('config', 'G-MJD99TVLDM');
   </script>
 </head>
+
 <body>
+  <div class="background-parallax" id="background-parallax">
+    <img src="imgs/background-green.webp" alt="jungle" id="bg-green" draggable="false">
+    <img value="1" src="imgs/monkeys-green.webp" alt="monkeys" id="bg-monkeys" draggable="false">
+    <img value=".5" src="imgs/bushes-green.webp" alt="bushes" id="bg-bushes" draggable="false">
+  </div>
+  <img data-aos="fade-up" src="imgs/palm-tree-green.webp" draggable="false" alt="palm-tree" class="tree" id="palm-tree">
+  <img data-aos="fade-up" src="imgs/grass1-green.webp" draggable="false" alt="grass" class="grass" id="grass1">
+  <img data-aos="fade-up" src="imgs/grass4-green.webp" draggable="false" alt="grass" class="grass" id="grass2">
+  <!--<div class="grass-box" id="grass-box" data-aos="fade-up"></div>-->
   <audio src="./tts.mp3" id="tts"></audio>
   <img src="./imgs/face.webp" class="face" alt="face" id="face" data-aos="fade-down" draggable="false">
-  <p id="assistance">Need Assistance?</p>
   <div class="face-container" id="face-container"></div>
   <div id="dialogue">
     <p id="dialogue-text"></p>
@@ -45,18 +54,18 @@
   </div>
 
   <header class="heading" data-aos="fade-down">
-    <div class="status nav-part">
-      <a href="#status" id="status"></a>
-    </div>
+    <div class="status nav-part" id="bucket"></div>
+    <!-- <img src="imgs/lianas-green.webp" class="lianas" alt="lianas" draggable="false"> -->
     <nav class="navigation nav-part">
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
+      <a href="#hobbies">Hobbies</a>
       <a href="#techs">Technologies</a>
       <a href="#social">Social</a>
     </nav>
   </header>
   <main>
-    <section class="landing-section">
+    <section class="landing-section" id="landing-section">
       <div style="text-align: center;">
         <h1 data-aos="fade-down">Oussama Bouzalim</h1>
         <h3 data-aos="fade-down">Software Developer</h3>
@@ -81,11 +90,15 @@
     </section>
     <section class="about-section" id="about">
       <h1 class="section-title" data-aos="fade-up">ABOUT ME</h1>
-      <div class="desc" data-aos="fade-down" id="about-me">
+      <img draggable="false" src="imgs/jungle-tree-green.webp" alt="jungle-tree" class="tree" id="jungle-tree">
+      <div class="desc" id="about-me">
         <p>
-          <button class="special-btn" id="play-btn" href="#play">Play</button>Hi! I'm Oussama Bouzalim, a <span id="age"></span>-year-old software developer passionate about tech and problem-solving.
+          <img src="imgs/lianas-brown-green.webp" alt="lianas" draggable="false" id="lianas-brown">
+          <button class="special-btn" id="play-btn" href="#play">Play</button>Hi! I'm Oussama Bouzalim, a <span
+            id="age"></span>-year-old software developer passionate about tech and problem-solving.
           <br><br>
-          I specialize in front-end development with HTML, CSS, and JavaScript, and build back-end systems using Node.js, Bun, and Python. I'm also exploring Rust for high-performance applications.
+          I specialize in front-end development with HTML, CSS, and JavaScript, and build back-end systems using
+          Node.js, Bun, and Python. I'm also exploring Rust for high-performance applications.
           <br><br>
           Outside of coding, I enjoy playing cards, reading, and working out.
           <br><br>
@@ -93,7 +106,7 @@
           <br><br>
           Feel free to check out my work or reach out—let’s build something great!
         </p>
-        <img draggable="false" width="300" src="./imgs/info.webp" alt="failed to load image" id="book-about" />
+        <img draggable="false" width="300" src="./imgs/info-green.webp" alt="failed to load image" id="book-about" />
       </div>
     </section>
     <section class="projects" id="projects">
@@ -103,11 +116,18 @@
           <h3 class="project-title">Blog API</h3>
           <p class="project-desc">an open-source project that helps you run your own blog.</p>
           <a href="https://github.com/mowgly11/blog-api" target="_blank" class="special-btn">Check it out</a>
+          <img src="imgs/monkey1-green.webp" alt="monkey" draggable="false">
         </div>
         <div class="project">
           <h3 class="project-title">Earth Bot</h3>
           <p class="project-desc">a mini-games discord bot to play and compete with your friends</p>
-          <a href="https://top.gg/bot/856696786550521908" target="_blank" class="special-btn">Check it out</a>
+          <a href="https://github.com/mowgly11/earth-farm" target="_blank" class="special-btn">Check it out</a>
+        </div>
+        <div class="project">
+          <h3 class="project-title">Pasteblend</h3>
+          <p class="project-desc">a file sharing platform to exchange files between devices with ease</p>
+          <a href="https://pasteblend1.azurewebsites.net/" target="_blank" class="special-btn">Check it out</a>
+          <img src="imgs/monkey2-green.webp" alt="monkey" draggable="false">
         </div>
         <div class="project">
           <h3 class="project-title">Remember School</h3>
@@ -117,10 +137,12 @@
         <div class="project">
           <h3 class="project-title">IconScout Scraper</h3>
           <p class="project-desc">iconscout.com scraper, download premium icons for free.</p>
-          <a href="https://github.com/mowgly11/iconscout-image-scraper.git" target="_blank" class="special-btn">Check it out</a>
+          <a href="https://github.com/mowgly11/iconscout-image-scraper.git" target="_blank" class="special-btn">Check it
+            out</a>
         </div>
         <div onclick="takeToSite('https:\/\/github.com/mowgly11')" class="project see-more">
           <h1 style="font-weight: 600;">See More &rarr;</h1>
+          <img src="imgs/monkey3-green.webp" alt="monkey" draggable="false">
         </div>
       </div>
     </section>
@@ -128,15 +150,17 @@
       <h1 class="section-title" data-aos="fade-down">HOBBIES</h1>
       <div class="hobbies-content">
         <div class="hobbies-cards ace-container" data-aos="fade-right">
-          <img id="ace-animation" src="./imgs/ace.webp" alt="ace" height="250" width="200" draggable="false">
+          <img id="ace-animation" src="./imgs/ace-green.webp" alt="ace" height="250" width="200" draggable="false">
           <p>Cards</p>
         </div>
         <div class="hobbies-reading" data-aos="fade-right">
-          <img id="book-animation" src="./imgs/book-closed.webp" alt="ace" height="250" width="230" draggable="false">
+          <img id="book-animation" src="./imgs/book-closed-green.webp" alt="ace" height="250" width="250"
+            draggable="false">
           <p>Reading</p>
         </div>
         <div class="hobbies-sports" data-aos="fade-right">
-          <img id="runner-animation" src="./imgs/runner-frame1.webp" height="250" width="200" alt="running" draggable="false">
+          <img id="runner-animation" src="./imgs/runner-frame1-green.webp" height="250" width="200" alt="running"
+            draggable="false">
           <p>Running</p>
         </div>
       </div>
@@ -146,49 +170,43 @@
       <h3 data-aos="fade-right">Languages</h3>
       <div class="techs-content">
         <div class="tech-box" data-aos="fade-right">
-          <div class="tech" >HTML</div>
-          <img class="tech-img" src="./imgs/html.webp" alt="lang" draggable="false" width="50">
+          <img draggable="false" src="imgs/head-green.webp" class="head-tail" id="head" alt="head">
+          <div class="tech">HTML</div>
         </div>
         <div class="tech-box" data-aos="fade-down">
-          <div class="tech" >CSS</div>
-          <img class="tech-img" src="./imgs/css.webp" alt="lang" draggable="false" width="50">
+          <div class="tech">CSS</div>
         </div>
         <div class="tech-box" data-aos="fade-up">
-          <div class="tech" >JavaScript</div>
-          <img class="tech-img" src="./imgs/js.webp" alt="lang" draggable="false" width="50">
-        </div>
-        <div class="tech-box" data-aos="fade-left">
-          <div class="tech" >TypeScript</div>
-          <img class="tech-img" src="./imgs/ts.webp" alt="lang" draggable="false" width="50">
-        </div>
-        <div class="tech-box" data-aos="fade-down">
-          <div class="tech" >C</div>
-          <img class="tech-img" src="./imgs/c.webp" alt="lang" draggable="false" width="50">
-        </div>
-        <div class="tech-box" data-aos="fade-up">
-          <div class="tech" >GO</div>
-          <img class="tech-img" src="./imgs/go.webp" alt="lang" draggable="false" width="50">
+          <div class="tech">JavaScript</div>
         </div>
         <div class="tech-box" data-aos="fade-right">
-          <div class="tech" >Python</div>
-          <img class="tech-img" src="./imgs/py.webp" alt="lang" draggable="false" width="50">
+          <div class="tech">TypeScript</div>
         </div>
-        <div class="tech-box" data-aos="fade-left">
-          <div class="tech" >> PHP</div>
-          <img class="tech-img" src="./imgs/php.webp" alt="lang" draggable="false" width="50">
+        <div class="tech-box" data-aos="fade-down">
+          <div class="tech">C</div>
+        </div>
+        <div class="tech-box" data-aos="fade-up">
+          <div class="tech">GO</div>
+        </div>
+        <div class="tech-box" data-aos="fade-right">
+          <div class="tech">Python</div>
+        </div>
+        <div class="tech-box" data-aos="fade-down">
+          <img draggable="false" src="imgs/tail-green.webp" class="head-tail" id="tail" alt="tail">
+          <div class="tech">> PHP</div>
         </div>
       </div>
       <h3 data-aos="fade-right">Frameworks & Other</h3>
       <div class="techs-content">
         <div class="tech" data-aos="fade-up">Git</div>
         <div class="tech" data-aos="fade-down">NodeJS</div>
-        <div class="tech" data-aos="fade-up">React</div>
+        <div class="tech" data-aos="fade-right">React</div>
         <div class="tech" data-aos="fade-down">Express</div>
         <div class="tech" data-aos="fade-up">Gin</div>
-        <div class="tech" data-aos="fade-down">Bun</div>
+        <div class="tech" data-aos="fade-right">Bun</div>
         <div class="tech" data-aos="fade-up">MongoDB</div>
         <div class="tech" data-aos="fade-down">MySQL</div>
-        <div class="tech" data-aos="fade-up">Docker</div>
+        <div class="tech" data-aos="fade-right">Docker</div>
       </div>
     </section>
     <section class="social" id="social">

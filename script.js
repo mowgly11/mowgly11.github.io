@@ -1,24 +1,74 @@
 document.addEventListener("DOMContentLoaded", async () => {
-    const data = await fetch("./config.json").then(res => res.json());
+    const loadTheme = localStorage.getItem("theme");
+    if (!loadTheme || !["default", "jungle"].includes(loadTheme)) localStorage.setItem('theme', "default");
+    let currentTheme = loadTheme;
 
-    let root = document.querySelector(':root');
-    let availableText = document.getElementById("status");
-    let face = document.getElementById("face");
-    let playBtn = document.getElementById("play-btn");
-    let dialogue = document.getElementById("dialogue");
-    let dialogueText = document.getElementById("dialogue-text");
-    let audio = document.getElementById("tts");
-    let faceContainer = document.getElementById("face-container");
-    let assistanceText = document.getElementById("assistance");
-    let bookAbout = document.getElementById("book-about");
+    const root = document.querySelector(":root");
+    const face = document.getElementById("face");
+    const playBtn = document.getElementById("play-btn");
+    const dialogue = document.getElementById("dialogue");
+    const dialogueText = document.getElementById("dialogue-text");
+    const audio = document.getElementById("tts");
+    const faceContainer = document.getElementById("face-container");
+    const bucket = document.getElementById("bucket");
+    const bgMonkeys = document.getElementById("bg-monkeys");
+    const bgBushes = document.getElementById("bg-bushes");
+    const landingSection = document.getElementById("landing-section");
 
-    if (data.available) {
-        root.style.setProperty("--availability", 'green');
-        availableText.textContent = "Available";
-    } else {
-        root.style.setProperty("--availability", 'red');
-        availableText.textContent = "On Vacation";
+    let parallaxElements = [bgMonkeys, bgBushes];
+
+    landingSection.addEventListener("mousemove", parallax);
+
+    function parallax(e) {
+        parallaxElements.forEach(shift => {
+            const position = shift.getAttribute("value");
+            const x = (window.innerWidth - e.pageX * position) / 90;
+            const y = (window.innerHeight - e.pageY * position) / 90;
+
+            shift.style.transform = `translateX(${x}px) translateY(${y}px)`;
+        })
     }
+
+    const bnwThemeVars = {
+        "--color-1": "#e6e6e6",
+        "--color-2": "#242424",
+        "--color-3": "rgb(98, 98, 98)",
+        "--color-4": "#c4c4c4",
+        "--color-5": "rgb(0, 0, 0, .2)",
+        "--color-6": "white",
+        "--color-7": "#F5F5F5",
+        "--color-8": "#242424"
+    };
+
+    const colorfulThemeVars = {
+        "--color-1": "#d7d66e",
+        "--color-2": "#206733",
+        "--color-3": "#217132",
+        "--color-4": "#5e9239",
+        "--color-5": "rgb(0, 0, 0, .2)",
+        "--color-6": "#c3ce7c",
+        "--color-7": "#a7c367",
+        "--color-8": "#e0d973"
+    };
+
+    bucket.addEventListener("click", (e) => {
+        let theme = localStorage.getItem('theme');
+
+        if (theme === "jungle") {
+            localStorage.setItem("theme", "default");
+            switchTheme("default");
+            currentTheme = "default";
+        }
+        else if (theme === "default") {
+            localStorage.setItem("theme", "jungle");
+            switchTheme("jungle");
+            currentTheme = "jungle";
+        } else {
+            localStorage.setItem("theme", "default");
+            switchTheme("default");
+            currentTheme = "default";
+        }
+    });
 
     document.body.style.pointerEvents = 'none';
     document.body.style.opacity = '0.5';
@@ -79,22 +129,58 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     const runnerImgs = [
-        "./imgs/runner-frame3.webp",
-        "./imgs/runner-frame2.webp",
-        "./imgs/runner-frame4.webp",
-        "./imgs/runner-frame1.webp",
+        "imgs/runner-frame1.webp",
+        "imgs/runner-frame3.webp",
+        "imgs/runner-frame2.webp",
+        "imgs/runner-frame4.webp",
     ];
 
     const bookImgs = [
-        "./imgs/book-half.webp",
-        "./imgs/book-open.webp",
-        "./imgs/book-closed.webp"
+        "imgs/book-half.webp",
+        "imgs/book-open.webp",
+        "imgs/book-closed.webp"
     ];
 
     const faceImgs = [
-        "./imgs/face.webp",
-        "./imgs/face-talking.webp"
+        "imgs/face.webp",
+        "imgs/face-talking.webp"
     ];
+
+    const otherImgs = [
+        "imgs/laptop.webp",
+        "imgs/laptop-green.webp",
+        "imgs/info.webp",
+        "imgs/info-green.webp",
+        "imgs/ace.webp",
+        "imgs/ace-green.webp",
+        "imgs/jungle-tree-green.webp",
+        "imgs/palm-tree-green.webp",
+        "imgs/lianas-brown-green.webp",
+        "imgs/lianas-green.webp",
+        "imgs/grass1-green.webp",
+        "imgs/grass2-green.webp",
+        "imgs/grass3-green.webp",
+        "imgs/grass4-green.webp",
+        "imgs/grass5-green.webp",
+        "imgs/github-green.webp",
+        "imgs/linkedin-green.webp",
+        "imgs/gmail-green.webp",
+        "imgs/fiverr-green.webp",
+        "imgs/instagram-green.webp",
+        "imgs/github.webp",
+        "imgs/linkedin.webp",
+        "imgs/gmail.webp",
+        "imgs/fiverr.webp",
+        "imgs/instagram.webp",
+        "imgs/background-green.webp",
+        "imgs/monkeys-green.webp",
+        "imgs/bushes-green.webp",
+        "imgs/monkey1-green.webp",
+        "imgs/monkey2-green.webp",
+        "imgs/monkey3-green.webp",
+        "imgs/head-green.webp",
+        "imgs/tail-green.webp",
+    ]
 
     const ttsLines = [
         "Osama: Hi! I'm Oussama Bouzalim, a 20-year-old software developer passionate about",
@@ -108,9 +194,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     try {
         await Promise.all([
-            preloadImages(runnerImgs),
-            preloadImages(bookImgs),
-            preloadImages(faceImgs),
+            preloadImages([...runnerImgs, ...runnerImgs.map(i => i.replace(".webp", "-green.webp"))]),
+            preloadImages([...bookImgs, ...bookImgs.map(i => i.replace(".webp", "-green.webp"))]),
+            preloadImages([...faceImgs, ...faceImgs.map(i => i.replace(".webp", "-green.webp"))]),
+            preloadImages(otherImgs),
             preloadAudio(audio ? audio.src : null)
         ]);
 
@@ -133,28 +220,28 @@ document.addEventListener("DOMContentLoaded", async () => {
         let i = 0;
         runnerInterval = setInterval(() => {
             if (i === runnerImgs.length) i = 0;
-            setImageSrc(runnerImg, runnerImgs[i]);
+            setImageSrc(runnerImg, convertToThemeName(currentTheme, runnerImgs[i]));
             i++;
         }, 300);
     };
 
     runnerImg.onmouseleave = function () {
         clearInterval(runnerInterval);
-        setImageSrc(runnerImg, runnerImgs[0]);
+        setImageSrc(runnerImg, convertToThemeName(currentTheme, runnerImgs[0]));
     };
 
     const bookImg = document.getElementById("book-animation");
 
     bookImg.onmouseenter = async function () {
-        setImageSrc(bookImg, "./imgs/book-half.webp");
+        setImageSrc(bookImg, convertToThemeName(currentTheme, "imgs/book-half.webp"));
         await new Promise(res => setTimeout(res, 300));
-        setImageSrc(bookImg, "./imgs/book-open.webp");
+        setImageSrc(bookImg, convertToThemeName(currentTheme, "imgs/book-open.webp"));
     };
 
     bookImg.onmouseleave = async function () {
-        setImageSrc(bookImg, "./imgs/book-half.webp");
+        setImageSrc(bookImg, convertToThemeName(currentTheme, "imgs/book-half.webp"));
         await new Promise(res => setTimeout(res, 300));
-        setImageSrc(bookImg, "./imgs/book-closed.webp");
+        setImageSrc(bookImg, convertToThemeName(currentTheme, "imgs/book-closed.webp"));
     };
 
     document.getElementById("age").textContent = new Date().getFullYear() - 2005;
@@ -163,14 +250,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     face.addEventListener("click", () => {
         playBtn.style.display = "block";
         faceContainer.style.opacity = .3;
-        assistanceText.textContent = "Put me back here!!";
         document.body.addEventListener("mousemove", followMouse);
 
         document.body.addEventListener('mouseleave', mouseLeavesPage);
 
         faceContainer.addEventListener("click", (e) => {
             faceContainer.style.opacity = 1;
-            assistanceText.textContent = "Need Assistance?";
             playBtn.style.display = "none";
             document.body.removeEventListener('mousemove', followMouse);
             document.body.removeEventListener('mouseleave', mouseLeavesPage);
@@ -233,9 +318,9 @@ document.addEventListener("DOMContentLoaded", async () => {
             let mouthOpen = false;
             mouthInterval = setInterval(() => {
                 if (mouthOpen) {
-                    setImageSrc(face, './imgs/face-talking.webp');
+                    setImageSrc(face, convertToThemeName(currentTheme, 'imgs/face-talking.webp'));
                 } else {
-                    setImageSrc(face, './imgs/face.webp');
+                    setImageSrc(face, convertToThemeName(currentTheme, 'imgs/face.webp'));
                 }
                 mouthOpen = !mouthOpen;
             }, 300);
@@ -256,7 +341,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             audio.currentTime = 0;
             clearInterval(mouthInterval);
             clearInterval(dialogueInterval);
-            setImageSrc(face, './imgs/face.webp');
+            setImageSrc(face, convertToThemeName(currentTheme, 'imgs/face.webp'));
         }
     }
 
@@ -269,7 +354,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                     playBtn.style.backgroundColor = "rgb(255, 204, 37)";
                     face.style.scale = 1;
                     if (mouthInterval) clearInterval(mouthInterval);
-                    setImageSrc(face, './imgs/face.webp');
+                    setImageSrc(face, convertToThemeName(currentTheme, 'imgs/face.webp'));
                     dialogue.style.zIndex = -1;
                     dialogue.style.opacity = 0;
                 }, 5000);
@@ -277,6 +362,115 @@ document.addEventListener("DOMContentLoaded", async () => {
             dialogueText.textContent = "Osama: " + ttsLines[currentLineIndex];
             currentLineIndex++;
         }, 5000);
+    }
+
+    let replaceableAssets = [
+        ...runnerImgs,
+        ...bookImgs,
+        ...faceImgs,
+        "imgs/info.webp",
+        "imgs/laptop.webp",
+        "imgs/ace.webp",
+        "imgs/linkedin.webp",
+        "imgs/gmail.webp",
+        "imgs/github.webp",
+        "imgs/fiverr.webp",
+        "imgs/instagram.webp",
+    ];
+
+    let hideableAssets = [
+        "imgs/grass1-green.webp",
+        "imgs/grass2-green.webp",
+        "imgs/grass3-green.webp",
+        "imgs/grass4-green.webp",
+        "imgs/grass5-green.webp",
+        "imgs/palm-tree-green.webp",
+        "imgs/jungle-tree-green.webp",
+        "imgs/lianas-green.webp",
+        "imgs/lianas-brown-green.webp",
+        "imgs/background-green.webp",
+        "imgs/monkeys-green.webp",
+        "imgs/bushes-green.webp",
+        "imgs/monkey1-green.webp",
+        "imgs/monkey2-green.webp",
+        "imgs/monkey3-green.webp",
+        "imgs/head-green.webp",
+        "imgs/tail-green.webp",
+    ];
+    function switchTheme(theme = "default") {
+        let allImgs = Array.from(document.querySelectorAll("img"));
+        let themeKeys;
+        switch (theme) {
+            case "default":
+                bucket.style.backgroundImage = "url(./imgs/bucket-colored.webp)";
+
+                themeKeys = bnwThemeVars;
+                allImgs.forEach(img => {
+                    let replacementSrc = replaceableAssets
+                        .find(a => a === img.src.replace(window.location.origin + "/", "").replace("-green", ""));
+
+                    if (replacementSrc) {
+                        setImageSrc(img, replacementSrc);
+                    }
+                });
+
+                allImgs.forEach(img => {
+                    let imgSrc = img.src.replace(window.location.origin + "/", "");
+                    if (hideableAssets.includes(imgSrc)) img.style.opacity = 0;
+
+                });
+
+                landingSection.style.background = "linear-gradient(to bottom, var(--color-7), var(--color-4))";
+
+                break;
+            case "jungle":
+                bucket.style.backgroundImage = "url(./imgs/bucket-black.webp)";
+                bucket.style.backgroundSize = "cover";
+
+                themeKeys = colorfulThemeVars;
+                allImgs.forEach(img => {
+                    let replacementSrc = replaceableAssets
+                        .find(a => a === img.src.replace(window.location.origin + "/", ""));
+
+                    if (replacementSrc) {
+                        setImageSrc(img, replacementSrc.replace(".webp", "-green.webp"));
+                    }
+                });
+
+                allImgs.forEach(img => {
+                    let imgSrc = img.src.replace(window.location.origin + "/", "");
+                    if (hideableAssets.includes(imgSrc)) img.style.opacity = 1;
+
+                });
+
+                landingSection.style.background = "none";
+                break;
+            default:
+                switchTheme("default");
+        }
+
+        for (const key in themeKeys) {
+            root.style.setProperty(key, themeKeys[key]);
+        }
+
+    }
+
+    switchTheme(currentTheme);
+
+    function convertToThemeName(theme, source) {
+        let result;
+        switch (theme) {
+            case "default":
+                result = source.replace("-green.webp", ".webp");
+                break;
+            case "jungle":
+                result = source.replace(".webp", "-green.webp")
+                break;
+            default:
+                result = convertToThemeName("default", source);
+        }
+
+        return result;
     }
 });
 
@@ -298,4 +492,8 @@ function copyEmail() {
         copiedText.style.opacity = 0;
         cooldown = false;
     }, 2000);
+}
+
+function randomInteger(min = 1, max = 100) {
+    return Math.floor(Math.random() * (max - min)) + min;
 }
