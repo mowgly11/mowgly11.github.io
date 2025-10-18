@@ -459,13 +459,12 @@ body {
 
 
 #jungle-tree {
+    position: absolute;
     width: 600px;
     height: 500px;
-    bottom: 0;
-    left: 61%;
-    top: 7%;
+    right: -180px;
+    top: -420px;
     z-index: 99999;
-    position: absolute;
 }
 
 #palm-tree {
@@ -476,6 +475,16 @@ body {
     width: 300px;
     z-index: 999;
     position: absolute;
+}
+
+#lianas-brown {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    bottom: -150px;
+    right: 50px;
+    z-index: -1;
+    opacity: .6;
 }
 
 #book-about {
@@ -526,15 +535,6 @@ body {
     z-index: 999999;
 }
 
-#lianas-brown {
-    position: absolute;
-    width: 150px;
-    height: 150px;
-    bottom: -150px;
-    right: 50px;
-    z-index: -1;
-    opacity: .6;
-}
 
 .about-section p:hover {
     box-shadow: 15px 15px 0px rgb(98, 98, 98, .5);
