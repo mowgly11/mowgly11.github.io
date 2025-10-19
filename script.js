@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const bgMonkeys = document.getElementById("bg-monkeys");
     const bgBushes = document.getElementById("bg-bushes");
     const landingSection = document.getElementById("landing-section");
+    const cham = document.getElementById("cham-green");
 
     let parallaxElements = [bgMonkeys, bgBushes];
 
@@ -180,6 +181,11 @@ document.addEventListener("DOMContentLoaded", async () => {
         "imgs/monkey3-green.webp",
         "imgs/head-green.webp",
         "imgs/tail-green.webp",
+        "imgs/cham-green.webp",
+        "imgs/cham-yellow-green.webp",
+        "imgs/cham-red-green.webp",
+        "imgs/cham-blue-green.webp",
+        "imgs/cham-pink-green.webp",
     ]
 
     const ttsLines = [
@@ -396,7 +402,13 @@ document.addEventListener("DOMContentLoaded", async () => {
         "imgs/monkey3-green.webp",
         "imgs/head-green.webp",
         "imgs/tail-green.webp",
+        "imgs/cham-green.webp",
+        "imgs/cham-yellow-green.webp",
+        "imgs/cham-red-green.webp",
+        "imgs/cham-blue-green.webp",
+        "imgs/cham-pink-green.webp",
     ];
+
     function switchTheme(theme = "default") {
         let allImgs = Array.from(document.querySelectorAll("img"));
         let themeKeys;
@@ -472,6 +484,32 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         return result;
     }
+
+    let chamImages = [
+        "imgs/cham-yellow-green.webp",
+        "imgs/cham-red-green.webp",
+        "imgs/cham-blue-green.webp",
+        "imgs/cham-pink-green.webp",
+        "imgs/cham-green.webp",
+    ];
+
+    let interval;
+    let index = 0;
+    cham.addEventListener("mouseenter", (e) => {
+        cham.style.backgroundImage = `url(${chamImages[index]})`;
+        index++;
+        if(index === chamImages.length) index = 0;
+
+        interval = setInterval(() => {
+            cham.style.backgroundImage = `url(${chamImages[index]})`;
+            index++;
+            if(index === chamImages.length) index = 0;
+        }, 700);
+    });
+
+    cham.addEventListener("mouseleave", (e) => {
+        clearInterval(interval);
+    });
 });
 
 function takeToSite(site) {

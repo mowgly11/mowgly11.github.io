@@ -771,15 +771,39 @@ body {
 }
 
 #head {
-    top: -45px;
+    top: -43px;
     left: 20px;
 }
 
 #tail {
     bottom: -57px;
-    right: -40px;
+    right: -35px;
     rotate: 190deg;
 }
+
+.techs-content{
+    position: relative;
+}
+
+.framework-box {
+    position: relative;
+}
+
+#cham-green {
+    position: absolute;
+    width: 120px;
+    height: 85px;
+    top: -43px;
+    left: 65px;
+    z-index: 99;
+    background-image: url(imgs/cham-green.webp);
+    background-size: cover;
+    transition: .6s;
+}
+
+/* #cham-green:hover {
+    background-image: url(imgs/cham-yellow-green.webp);
+} */
 
 .social {
     color: var(--color-2);
@@ -923,6 +947,12 @@ body {
     }
 
     .email {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    #cham-green {
         display: none;
     }
 }
