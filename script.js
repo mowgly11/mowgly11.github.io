@@ -433,6 +433,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 });
 
                 landingSection.style.background = "linear-gradient(to bottom, var(--color-7), var(--color-4))";
+                cham.style.display = "none";
 
                 break;
             case "jungle":
@@ -452,10 +453,10 @@ document.addEventListener("DOMContentLoaded", async () => {
                 allImgs.forEach(img => {
                     let imgSrc = img.src.replace(window.location.origin + "/", "");
                     if (hideableAssets.includes(imgSrc)) img.style.opacity = 1;
-
                 });
 
                 landingSection.style.background = "none";
+                cham.style.display = "block";
                 break;
             default:
                 switchTheme("default");
