@@ -10,6 +10,8 @@
     --color-6: white;
     --color-7: #F5F5F5;
     --color-8: #242424;
+
+    --fish-rotation: -60deg;
 }
 
 body::-webkit-scrollbar {
@@ -558,7 +560,38 @@ body {
     background-color: var(--color-4);
     flex-direction: column;
     padding: 15px;
+    position: relative;
 }
+
+/* .pirana,#bowl,#fish {
+    position: absolute;
+}
+
+.pirana {
+    width: 100px;
+    height: 100px;
+    top: 60px;
+    left: 50%;
+}
+
+.bowl {
+    height: 100px;
+    width: 105px;
+    background-image: url(imgs/bowl-green.webp);
+    background-size: cover;
+    left: 0;
+} 
+
+.fish {
+    height: 40px;
+    width: 50px;
+    background-image: url(imgs/fish-green.webp);
+    background-size: cover;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}*/
 
 .hobbies>h1 {
     margin-top: 130px;
@@ -662,7 +695,15 @@ body {
     position: relative;
 }
 
-.project img {
+.project-container {
+    position: relative;
+}
+
+.project-container:hover > #fish-box {
+    animation: jumpAndDip 1.6s linear .1s;
+}
+
+.project .monkey {
     position: absolute;
     width: 90px;
     bottom: 10px;
@@ -670,8 +711,53 @@ body {
     transition: .3s;
 }
 
-.project img:hover {
+.project .monkey:hover {
     scale: 1.1;
+}
+
+/* @keyframes jumpAndDip {
+    25% {
+        transform: translateX(150px) translateY(-200px);
+    }
+
+    50% {
+        --fish-rotation: 60deg;
+    }
+
+    100% {
+        transform: translateX(300px) translateY(0);
+        --fish-rotation: 60deg;
+    }
+} */
+
+@keyframes jumpAndDip {
+    25% {
+        transform: translateX(50%) translateY(-200px);
+    }
+
+    50% {
+        --fish-rotation: 60deg;
+    }
+
+    100% {
+        transform: translateX(100%) translateY(0);
+        --fish-rotation: 60deg;
+    }
+}
+
+#fish-box {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    left: 40px;
+    top: 40px;
+}
+
+#fish {
+    width: 80px;
+    position: absolute;
+    rotate: var(--fish-rotation);
+    transition: .3s;
 }
 
 .project-title {
@@ -801,10 +887,6 @@ body {
     transition: .6s;
 }
 
-/* #cham-green:hover {
-    background-image: url(imgs/cham-yellow-green.webp);
-} */
-
 .social {
     color: var(--color-2);
     display: flex;
@@ -838,6 +920,18 @@ body {
 
 .social-content img:hover {
     scale: 1.05;
+}
+
+footer {
+    position: relative;
+}
+
+#crocodile {
+    position: relative;
+    width: 200px;
+    top: 0;
+    left: 0;
+    margin: 30px 0;
 }
 
 @media screen and (max-width: 1310px) {
@@ -951,7 +1045,7 @@ body {
     }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 970px) {
     #cham-green {
         display: none;
     }

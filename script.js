@@ -186,6 +186,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         "imgs/cham-red-green.webp",
         "imgs/cham-blue-green.webp",
         "imgs/cham-pink-green.webp",
+        "imgs/crocodile-green.webp",
+        "imgs/fish-green.webp",
     ]
 
     const ttsLines = [
@@ -407,6 +409,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         "imgs/cham-red-green.webp",
         "imgs/cham-blue-green.webp",
         "imgs/cham-pink-green.webp",
+        "imgs/crocodile-green.webp",
+        "imgs/fish-green.webp",
     ];
 
     function switchTheme(theme = "default") {
@@ -457,6 +461,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
                 landingSection.style.background = "none";
                 cham.style.display = "block";
+                
                 break;
             default:
                 switchTheme("default");
@@ -465,7 +470,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         for (const key in themeKeys) {
             root.style.setProperty(key, themeKeys[key]);
         }
-
     }
 
     switchTheme(currentTheme);
