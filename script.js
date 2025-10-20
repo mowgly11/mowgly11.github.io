@@ -9,12 +9,14 @@ document.addEventListener("DOMContentLoaded", async () => {
     const dialogue = document.getElementById("dialogue");
     const dialogueText = document.getElementById("dialogue-text");
     const audio = document.getElementById("tts");
+    const audio2 = document.getElementById("parrot-tts");
     const faceContainer = document.getElementById("face-container");
     const bucket = document.getElementById("bucket");
     const bgMonkeys = document.getElementById("bg-monkeys");
     const bgBushes = document.getElementById("bg-bushes");
     const landingSection = document.getElementById("landing-section");
     const cham = document.getElementById("cham-green");
+    const parrot = document.getElementById("parrot");
 
     let parallaxElements = [bgMonkeys, bgBushes];
 
@@ -188,6 +190,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         "imgs/cham-pink-green.webp",
         "imgs/crocodile-green.webp",
         "imgs/fish-green.webp",
+        "imgs/parrot1-green.webp",
+        "imgs/parrot2-green.webp",
     ]
 
     const ttsLines = [
@@ -411,6 +415,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         "imgs/cham-pink-green.webp",
         "imgs/crocodile-green.webp",
         "imgs/fish-green.webp",
+        "imgs/parrot1-green.webp",
+        "imgs/parrot2-green.webp",
     ];
 
     function switchTheme(theme = "default") {
@@ -432,7 +438,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
                 allImgs.forEach(img => {
                     let imgSrc = img.src.replace(window.location.origin + "/", "");
-                    if (hideableAssets.includes(imgSrc)) img.style.opacity = 0;
+                    if (hideableAssets.includes(imgSrc)) img.style.display = "none";
                 });
 
                 landingSection.style.background = "linear-gradient(to bottom, var(--color-7), var(--color-4))";
@@ -455,7 +461,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
                 allImgs.forEach(img => {
                     let imgSrc = img.src.replace(window.location.origin + "/", "");
-                    if (hideableAssets.includes(imgSrc)) img.style.opacity = 1;
+                    if (hideableAssets.includes(imgSrc)) img.style.display = "block";
                 });
 
                 landingSection.style.background = "none";
@@ -514,6 +520,15 @@ document.addEventListener("DOMContentLoaded", async () => {
     cham.addEventListener("mouseleave", (e) => {
         clearInterval(interval);
     });
+
+    let setSrc;
+    parrot.onclick = () => {
+        if(setSrc) clearTimeout(setSrc);
+        audio2.currentTime = 0;
+        audio2.play();
+        setImageSrc(parrot, "imgs/parrot2-green.webp");
+        setSrc = setTimeout(() =>setImageSrc(parrot, "imgs/parrot1-green.webp"),500)
+    }
 });
 
 function takeToSite(site) {

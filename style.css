@@ -486,7 +486,6 @@ body {
     bottom: -150px;
     right: 50px;
     z-index: -1;
-    opacity: .6;
 }
 
 #book-about {
@@ -501,6 +500,16 @@ body {
     margin-top: 350px;
     margin-bottom: 50px;
     color: var(--color-8);
+}
+
+.parrot {
+    position: absolute;
+    width: 60px;
+    top: -135px;
+    right: 20px;
+    height: 90px;
+    z-index: 99999;
+    cursor: pointer;
 }
 
 .section-title {
@@ -670,7 +679,7 @@ body {
 }
 
 .project-container:hover > #fish-box {
-    animation: jumpAndDip 1.6s linear .1s;
+    animation: jumpAndDip 1.2s linear .1s;
 }
 
 .project .monkey {
@@ -686,6 +695,10 @@ body {
 }
 
 @keyframes jumpAndDip {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+
     25% {
         transform: translateX(50%) translateY(-200px);
     }
