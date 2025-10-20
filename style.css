@@ -130,8 +130,8 @@ body {
     background-image: url(./imgs/bucket-colored.webp);
     background-repeat: no-repeat;
     background-size: contain;
-    width: 65px;
-    height: 65px;
+    width: 66px;
+    height: 76px;
     transition: .3s;
     margin: 15px;
 }
@@ -563,36 +563,6 @@ body {
     position: relative;
 }
 
-/* .pirana,#bowl,#fish {
-    position: absolute;
-}
-
-.pirana {
-    width: 100px;
-    height: 100px;
-    top: 60px;
-    left: 50%;
-}
-
-.bowl {
-    height: 100px;
-    width: 105px;
-    background-image: url(imgs/bowl-green.webp);
-    background-size: cover;
-    left: 0;
-} 
-
-.fish {
-    height: 40px;
-    width: 50px;
-    background-image: url(imgs/fish-green.webp);
-    background-size: cover;
-    left: 50%;
-    top: 55%;
-    transform: translate(-50%, -50%);
-    position: absolute;
-}*/
-
 .hobbies>h1 {
     margin-top: 130px;
     color: var(--color-8);
@@ -714,21 +684,6 @@ body {
 .project .monkey:hover {
     scale: 1.1;
 }
-
-/* @keyframes jumpAndDip {
-    25% {
-        transform: translateX(150px) translateY(-200px);
-    }
-
-    50% {
-        --fish-rotation: 60deg;
-    }
-
-    100% {
-        transform: translateX(300px) translateY(0);
-        --fish-rotation: 60deg;
-    }
-} */
 
 @keyframes jumpAndDip {
     25% {
@@ -984,10 +939,6 @@ footer {
 @media screen and (max-width: 900px) {
     .landing-section h1 {
         font-size: 4em;
-    }
-
-    #bucket {
-        scale: .75;
     }
 
     .grass {
