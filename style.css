@@ -903,24 +903,20 @@ footer {
 }
 
 @media screen and (max-width: 1310px) {
-    .background-parallax {
-        display: none;
-    }
     .landing-section {
         background: linear-gradient(to bottom, var(--color-7), var(--color-4)) !important;
-    }
-    .heading img,
-    .heading nav {
-        display: none;
     }
 
     #face,
     #play-btn,
-    .face-container {
-        display: none;
-    }
-
-    #assistance {
+    .face-container,
+    #parrot,
+    #assistance,
+    .heading img,
+    .heading nav,
+    .background-parallax,
+    #book-about,
+    #jungle-tree {
         display: none;
     }
 
@@ -936,14 +932,6 @@ footer {
         font-size: 20px;
     }
 
-    #book-about {
-        display: none;
-    }
-
-    #jungle-tree {
-        display: none;
-    }
-
     #palm-tree {
         top: 15%;
     }
@@ -954,7 +942,8 @@ footer {
         font-size: 4em;
     }
 
-    .grass {
+    .grass,
+    .email {
         display: none;
     }
 
@@ -967,11 +956,8 @@ footer {
         width: 380px;
     }
 
+    .folder-close,
     .folder {
-        height: 200px;
-    }
-
-    .folder-close {
         height: 200px;
     }
 
@@ -1003,10 +989,6 @@ footer {
     .section-title {
         font-size: 3em;
     }
-
-    .email {
-        display: none;
-    }
 }
 
 @media screen and (max-width: 970px) {
@@ -1022,14 +1004,11 @@ footer {
 }
 
 @media screen and (max-height: 750px) {
-    .folder {
-        display: none;
-    }
-
     #face,
     #play-btn,
     #assistance,
-    .face-container {
+    .face-container,
+    .folder {
         display: none;
     }
 }

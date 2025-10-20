@@ -438,7 +438,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
                 allImgs.forEach(img => {
                     let imgSrc = img.src.replace(window.location.origin + "/", "");
-                    if (hideableAssets.includes(imgSrc)) img.style.display = "none";
+                    if (hideableAssets.includes(imgSrc)) img.style.opacity = 0;
                 });
 
                 landingSection.style.background = "linear-gradient(to bottom, var(--color-7), var(--color-4))";
@@ -461,7 +461,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
                 allImgs.forEach(img => {
                     let imgSrc = img.src.replace(window.location.origin + "/", "");
-                    if (hideableAssets.includes(imgSrc)) img.style.display = "block";
+                    if (hideableAssets.includes(imgSrc)) img.style.opacity = 1;
                 });
 
                 landingSection.style.background = "none";
