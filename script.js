@@ -9,7 +9,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     const dialogue = document.getElementById("dialogue");
     const dialogueText = document.getElementById("dialogue-text");
     const audio = document.getElementById("tts");
+    audio.volume = .6;
     const audio2 = document.getElementById("parrot-tts");
+    audio2.volume = .4;
     const faceContainer = document.getElementById("face-container");
     const bucket = document.getElementById("bucket");
     const bgMonkeys = document.getElementById("bg-monkeys");
@@ -527,7 +529,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         audio2.currentTime = 0;
         audio2.play();
         setImageSrc(parrot, "imgs/parrot2-green.webp");
-        setSrc = setTimeout(() =>setImageSrc(parrot, "imgs/parrot1-green.webp"),500)
+        setSrc = setTimeout(() =>setImageSrc(parrot, "imgs/parrot1-green.webp"),600)
     }
 });
 
