@@ -249,7 +249,7 @@ body {
     text-align: center;
 }
 
-.landing-section h3 {
+.landing-section h2 {
     font-size: 2em;
     color: var(--color-2);
     font-weight: 600;
