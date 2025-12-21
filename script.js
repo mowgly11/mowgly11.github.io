@@ -507,6 +507,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         setImageSrc(parrot, "imgs/parrot2-green.webp");
         setSrc = setTimeout(() =>setImageSrc(parrot, "imgs/parrot1-green.webp"),600)
     }
+
+    document.getElementById("year").textContent = new Date().getFullYear()
 });
 
 function takeToSite(site) {
